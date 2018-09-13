@@ -6,15 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2018 | JasonLai&#39;s blog</title>
+  <title>php-Types | JasonLai&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="JasonLai&#39;s blog">
-<meta property="og:url" content="http://yoursite.com/archives/2018/index.html">
+  <meta name="description" content="PHP的型態主要分為5種，分別是：  scalar type (標量類型) compound type (複合類型) special type (特殊類型) virtual type (虛擬類型) pseudo type (偽類型)  scalar type這種型態的變數會儲存某一個特定的數值，例如一個特定字串或數字…等等。有4種型態屬於 scalar type，分別是：  String Inte">
+<meta name="keywords" content="php">
+<meta property="og:type" content="article">
+<meta property="og:title" content="php-Types">
+<meta property="og:url" content="http://yoursite.com/2018/09/13/php-Types/index.html">
 <meta property="og:site_name" content="JasonLai&#39;s blog">
+<meta property="og:description" content="PHP的型態主要分為5種，分別是：  scalar type (標量類型) compound type (複合類型) special type (特殊類型) virtual type (虛擬類型) pseudo type (偽類型)  scalar type這種型態的變數會儲存某一個特定的數值，例如一個特定字串或數字…等等。有4種型態屬於 scalar type，分別是：  String Inte">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-09-13T14:24:37.359Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JasonLai&#39;s blog">
+<meta name="twitter:title" content="php-Types">
+<meta name="twitter:description" content="PHP的型態主要分為5種，分別是：  scalar type (標量類型) compound type (複合類型) special type (特殊類型) virtual type (虛擬類型) pseudo type (偽類型)  scalar type這種型態的變數會儲存某一個特定的數值，例如一個特定字串或數字…等等。有4種型態屬於 scalar type，分別是：  String Inte">
   
     <link rel="alternative" href="/atom.xml" title="JasonLai&#39;s blog" type="application/atom+xml">
   
@@ -130,36 +135,141 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-php-Types" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      php-Types
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/09/13/php-Types/" class="archive-article-date">
+
+        
+        <a href="/2018/09/13/php-Types/" class="archive-article-date">
   	<time datetime="2018-09-13T14:24:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-13</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/09/13/php-Types/">php-Types</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>PHP的型態主要分為5種，分別是：</p>
+<ol>
+<li>scalar type (標量類型)</li>
+<li>compound type (複合類型)</li>
+<li>special type (特殊類型)</li>
+<li>virtual type (虛擬類型)</li>
+<li>pseudo type (偽類型)</li>
+</ol>
+<h2 id="scalar-type"><a href="#scalar-type" class="headerlink" title="scalar type"></a>scalar type</h2><p>這種型態的變數會儲存某一個特定的數值，例如一個特定字串或數字…等等。<br>有4種型態屬於 scalar type，分別是：</p>
+<ol>
+<li>String</li>
+<li>Integer</li>
+<li>Float</li>
+<li>Boolean<br>以下再分別對這4種型態做介紹。</li>
+</ol>
+<p><strong>1. String</strong><br>String(字串型態) 是由一系列任意的字元組成，例如： “Hello World”。</p>
+<ol>
+<li>字串需要被包覆在引號內，引號可以是單引號或雙引號，都同樣代表字串。</li>
+<li>在其他程式語言中，單引號一般用在字元上，而雙引號用在字串上，但在 PHP 當中都同樣代表字串，而它的區別在於<br><ol>
+<li>當文字被包覆在單引號的時候，會被當成完全的字串</li>
+<li>而文字被包覆在雙引號的時候，可以結合變數去形成一個新的字串<br>由下面的範例可以解釋得更加清楚。</li>
+</ol>
+</li>
+</ol>
+<hr>
+<p>在 PHP 的字串型態中主要有以下4種表現方式：</p>
+<ol>
+<li><p>單引號<br>當文字包覆在單引號中，會被認定成完全的字串。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$name = &apos;Jason&apos;;</span><br><span class="line">$strInSingleQuote = &apos;Hello World, my name is $name.&apos;;</span><br><span class="line">echo $strInSingleQuote; // 印出來的結果是 Hello World, my name is $name.</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>雙引號<br>當文字包覆在雙引號中，可以結合變數去形成一個新的字串。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$name = &apos;Jason&apos;;</span><br><span class="line">$strInDoubleQuotes = &quot;Hello World, my name is $name.&quot;;</span><br><span class="line">echo $strInDoubleQuotes; // 印出來的結果是 Hello World, my name is Jason.</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Heredoc 結構<br>當文字內容很多的時候，可以採用這種方式去包覆字串。<br>在 <em>&lt;&lt;&lt;</em> 符號之後加上一個字型命名的標識文字，中間存放任意字串，最後在下一行的<strong>最前面(不可以有空格或其他文字)</strong>用前面定義的標識文字當作結束。<br><em>用雙引號包覆標識文字和不使用任何引號的標識文字都視為 heredoc 結構</em></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$name = &apos;Jason&apos;;</span><br><span class="line">$strInHeredoc = &lt;&lt;&lt;EXAMPLE</span><br><span class="line">	Hello World, my name is $name.</span><br><span class="line">EXAMPLE</span><br><span class="line">echo $strInHeredoc; // 印出來的結果是 Hello World, my name is Jason.</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>nowdoc 結構<br>當文字內容很多的時候，可以採用這種方式去包覆字串。<br>和 heredoc 結構不同的地方在於，標識文字要用單引號去包覆，而裡面的文字會被當成完全的字串。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$name = &apos;Jason&apos;;</span><br><span class="line">$strInNowdoc = &lt;&lt;&lt;&apos;EXAMPLE&apos;</span><br><span class="line">	Hello World, my name is $name.</span><br><span class="line">EXAMPLE</span><br><span class="line">echo $strInNowdoc; // 印出來的結果是 Hello World, my name is $name.</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p><strong>2. Integer</strong></p>
+<ol>
+<li>Integer(整數型態) 是由介於 -2147483648 到 2147483647 之間的非10進位數字組成。</li>
+<li>整數型態最少必需要包含一個位元，就是說你必須至少指派任一個數字給它。</li>
+<li>當數字大到超出儲存範圍發生溢位時，整數型態會自動轉換成浮點數型態(Float)。</li>
+<li>整數型態可以使用 2進位、8進位、16進位來儲存數值。</li>
+</ol>
+<hr>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$positiveNum = 123;</span><br><span class="line">$negativeNum = -123;</span><br><span class="line">$numInBinary = 0b1111;</span><br><span class="line">$numInOctal = 0127;</span><br><span class="line">$numInHexadecimal = 0x1A;</span><br></pre></td></tr></table></figure>
+<p><strong>3. Float</strong></p>
+<ol>
+<li>Float (浮點數型態)儲存的數值必須包含1個小數點。</li>
+<li>當浮點數型態的變數無法被辨識的時候，會回傳 NAN，表示不是一個數字 (Not A Number)</li>
+</ol>
+<hr>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$numInFloat = 1.213;</span><br><span class="line">$numInFloat = 1.2e3;</span><br></pre></td></tr></table></figure>
+<p><strong>4. Boolean</strong></p>
+<ol>
+<li>Boolean (布林值型態)儲存的數值是2種可能的狀態，True(真) 或 false(假)。</li>
+</ol>
+<hr>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$bt = true;</span><br><span class="line">$bf = false;</span><br></pre></td></tr></table></figure>
+<h2 id="compound-type"><a href="#compound-type" class="headerlink" title="compound type"></a>compound type</h2><p>這種型態的變數會由多個數值組成，例如一個陣列或是物件。<br>有2種型態屬於 compound type，分別是：</p>
+<ol>
+<li>Array</li>
+<li>Object<br>以下再分別對這2種型態做介紹。</li>
+</ol>
+<p><strong>1. Array</strong></p>
+<ol>
+<li>一個陣列可以儲存多個數值，不需要事前指定陣列的大小。</li>
+<li>陣列是以 key-value 的方式去儲存數值，一個 key 對應一個 value，用對應的 key 去取出數值。</li>
+<li>key 可以是 Integer 或 String 型態，而 value 可以是任意類型。</li>
+<li>若沒有指定 key，則陣列預設使用數字 0, 1, 2, 3…. 代表陣列的 key。</li>
+<li>可以使用 array() 關鍵字或 [] 符號去建立一個新陣列。</li>
+</ol>
+<hr>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$names = array(&apos;myName&apos; =&gt; &apos;Jason&apos;, &apos;Lai&apos;);</span><br><span class="line">echo $names[&apos;myName&apos;]; // 結果會印出 &apos;Jason&apos;</span><br><span class="line">echo $names[1]; // 結果會印出 &apos;Lai&apos;</span><br></pre></td></tr></table></figure>
+<p><strong>2. Object</strong><br>物件是用來描述或是表達一個現實世界的某個物體，由多種屬性和方法組成。<br>比如：<br>可以建立一個人的物件 (Person)，然後人有性別、年齡、姓名…等等，這些存在物件裡的變數我們稱為屬性。<br>而人會說話、走路…等等，這些存在物件裡的函式我們稱為方法。<br>更詳盡的介紹會在第8章介紹。</p>
+<ol>
+<li>可以透過 new 關鍵字來實做一個物件。</li>
+</ol>
+<hr>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">class Person</span><br><span class="line">&#123;</span><br><span class="line">	private $sex;</span><br><span class="line">	private $age;</span><br><span class="line">	public $name;</span><br><span class="line">	</span><br><span class="line">	function __construct($sex, $age, $name)&#123;</span><br><span class="line">		$this-&gt;sex = $sex;</span><br><span class="line">		$this-&gt;age = $age;</span><br><span class="line">		$this-&gt;name = $name;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	public function talk()&#123;</span><br><span class="line">		echo &quot;Hello, my name is &quot; . $this-&gt;name;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">$jason = new Person(&apos;male&apos;, 30, &apos;Jason&apos;);</span><br><span class="line">$jason-&gt;talk(); // 結果會印出 &apos;Hello, my name is Jason&apos;</span><br><span class="line">$jason-&gt;name = &apos;JasonLai&apos;;</span><br><span class="line">$jason-&gt;talk(); // 結果會印出 &apos;Hello, my name is JasonLai&apos;</span><br></pre></td></tr></table></figure>
+<h2 id="special-type"><a href="#special-type" class="headerlink" title="special type"></a>special type</h2><p>這種型態的變數是用來表示某種特別的目的。<br><strong>1. NULL</strong><br>NULL (空值型態)，表示不存在其他的數值。</p>
+<ol>
+<li>當某個變數是 NULL 型態時，它只可以有 NULL 這個數值 (大小寫不影響)。</li>
+</ol>
+<hr>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$var = &apos;test for null type&apos;;</span><br><span class="line">$var = null;</span><br><span class="line">var_dump($var); // 結果會印出 NULL</span><br></pre></td></tr></table></figure>
+<p><strong>2. Resource</strong><br>Resource (資源型態)，代表某個外部資料的參考，例如資料庫或從外部開啟的文字檔…等等。</p>
+<ol>
+<li>通常會由某個特別的函式建立或使用。</li>
+</ol>
+<hr>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">// 1. 從外部開啟名為 &apos;note&apos; 的文字檔</span><br><span class="line">$handle = fopen(&apos;note.txt&apos;, &apos;r&apos;);</span><br><span class="line">var_dump($handle);</span><br><span class="line"></span><br><span class="line">// 2. 建立與 mysql 資料庫的連線</span><br><span class="line">$conn = new mysqli(&apos;localhost&apos;, &apos;userName&apos;, &apos;password&apos;, &apos;dbName&apos;);</span><br><span class="line">var_dump($conn);</span><br></pre></td></tr></table></figure>
+<h2 id="virtual-type"><a href="#virtual-type" class="headerlink" title="virtual type"></a>virtual type</h2><p>這種型態的變數並非是真實存在的型態，也就是說你無法在程式碼裡面使用這種型態。<br>你只會在文件裡面看到這種型態出現，它是用來確保文件的可讀性所使用的型態。<br><strong>1. Mixed</strong><br>Mixed (混合型態)表示參數可以適用於不同的資料型態，例如 String 或 Integer，但要注意的是不一定是所有的型態都適合！</p>
+<hr>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">function printValue(mixed $value)&#123;</span><br><span class="line">	if(!is_array($value)) echo $value;</span><br><span class="line">	else</span><br><span class="line">		foreach($value as $singleValue)</span><br><span class="line">			echo $singleValue;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>2. Number</strong><br>Number (數字型態)表示參數可以是 Float 或是 Integer 任一種型態。</p>
+<hr>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">function countNumber(number $targetNum)&#123;</span><br><span class="line">	// Do something...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>3. Callback</strong><br>Callback (回調型態)又稱為 callable，可以用在一般的函式或物件裡的方法。<br>主要是因為在 PHP 裡，函式是由字串的型式傳遞，因此像是call_user_func() 或 usort() 方法可以以回調函式當作參數去執行特定的函式，<br><br>換句話說，就是使用名稱去搜尋對應的函式，並試圖去執行目標函式的程式碼。同樣的效果也可以用變數的方式達成，這會在第2章說明。<br>由下方的範例可以更清楚的解釋。</p>
+<hr>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">function my_callback_function() &#123;</span><br><span class="line">    echo &apos;Hello World&apos;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">call_user_func(&apos;my_callback_function&apos;); // 結果會印出 &apos;Hello World&apos;</span><br></pre></td></tr></table></figure>
+<p><strong>4. array|object</strong><br>表示型態可以是陣列或物件。</p>
+<p><strong>5. void</strong><br>表示某個特定的方法沒有任何的回傳值。</p>
+<h2 id="pseudo-type"><a href="#pseudo-type" class="headerlink" title="pseudo type"></a>pseudo type</h2><p>Pseudo Type (偽型態)，它不代表任何特定的資料型態，通常會出現在指定參數型態的部分。<br><strong>1. Iterable</strong><br>代表任意數值集合的類型，一般會和 foreach 函式一起出現。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">function showAllDatas(iterable $datas)&#123;</span><br><span class="line">	foreach($datas as $singleData)</span><br><span class="line">		echo $singleData;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 
-        <div class="article-info info-on-right">
-          
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -171,57 +281,106 @@
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/09/13/php-Types/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/09/10/php/" class="archive-article-date">
-  	<time datetime="2018-09-10T13:26:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-10</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2018/09/10/php/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">php</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/09/10/php/">php</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">php</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
   
 
-    
+  
+
+  
 
 
           </div>
@@ -244,8 +403,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
