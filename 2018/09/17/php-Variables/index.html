@@ -6,15 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2018 | JasonLai&#39;s blog</title>
+  <title>php-Variables | JasonLai&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="JasonLai&#39;s blog">
-<meta property="og:url" content="http://yoursite.com/archives/2018/index.html">
+  <meta name="description" content="針對 PHP 變數的部分，我主要會分成5個主題來討論，分別是：  basic predefined variables variable scope variable variables variables from external sources">
+<meta name="keywords" content="php">
+<meta property="og:type" content="article">
+<meta property="og:title" content="php-Variables">
+<meta property="og:url" content="http://yoursite.com/2018/09/17/php-Variables/index.html">
 <meta property="og:site_name" content="JasonLai&#39;s blog">
+<meta property="og:description" content="針對 PHP 變數的部分，我主要會分成5個主題來討論，分別是：  basic predefined variables variable scope variable variables variables from external sources">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-09-16T16:33:50.639Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JasonLai&#39;s blog">
+<meta name="twitter:title" content="php-Variables">
+<meta name="twitter:description" content="針對 PHP 變數的部分，我主要會分成5個主題來討論，分別是：  basic predefined variables variable scope variable variables variables from external sources">
   
     <link rel="alternative" href="/atom.xml" title="JasonLai&#39;s blog" type="application/atom+xml">
   
@@ -140,36 +145,117 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-php-Variables" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      php-Variables
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/09/17/php-Variables/" class="archive-article-date">
+
+        
+        <a href="/2018/09/17/php-Variables/" class="archive-article-date">
   	<time datetime="2018-09-16T16:33:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-17</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/09/17/php-Variables/">php-Variables</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>針對 PHP 變數的部分，我主要會分成5個主題來討論，分別是：</p>
+<ol>
+<li>basic</li>
+<li>predefined variables</li>
+<li>variable scope</li>
+<li>variable variables</li>
+<li>variables from external sources</li>
+</ol>
+<a id="more"></a>
+<h2 id="basic"><a href="#basic" class="headerlink" title="basic"></a>basic</h2><p>這個部分會討論如何宣告一個變數以及賦予變數數值。</p>
+<p><strong> 1. Declare</strong><br>首先是宣告變數的部分。</p>
+<ol>
+<li>在 PHP 裡面宣告變數的方式是使用<strong>$ (錢符號)</strong>加上一個任意的名稱，例如 $name、$age</li>
+<li>和其他程式語言不同的地方在於，在宣告變數的時候不需要特別指定型態，變數的型態會由賦予它的數值來決定。</li>
+</ol>
+<p><strong>特別注意的是，變數名稱不可以由數字做開頭</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$name;</span><br><span class="line">$age;</span><br><span class="line"></span><br><span class="line">$4test; // 發生錯誤</span><br></pre></td></tr></table></figure>
+<p><strong> 2. Assign value</strong><br>在賦值的部分，通常情況下會和宣告結合，也就是說在宣告變數的同時賦予變數數值。</p>
+<ol>
+<li>根據前面所提到的，你可以指派任一型態的數值給變數，變數會依據數值轉換自身的型態</li>
+<li><p>可以透過直接賦值、回傳函式或是 &amp; (取參考) 的方式賦予變數數值。<br>由下面的範例可以更清楚了解。</p>
+</li>
+<li><p>直接賦值<br>將數值直接傳遞給變數。</p>
+</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$name = &apos;Jason&apos;;</span><br><span class="line">$age = 30;</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>回傳函式<br>在函式內計算完結果後，再將數值回傳給變數。 (關於函式的部分，更詳細的說明會在第7章)</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">function getAge()&#123;</span><br><span class="line">	return 22;</span><br><span class="line">&#125;</span><br><span class="line">$age = getAge();</span><br></pre></td></tr></table></figure>
+<ol start="3">
+<li>取參考<br>當宣告一個新的變數的時候，電腦會分配一塊記憶體空間給變數，用來儲存變數的數值。<br>而透過<strong> &amp; (取參考符號)</strong>可以將這個記憶體空間分配給另一個變數。<br>換句話說，取參考的變數 和 被取參考的變數 是同樣的2個變數，只是擁有不同的名稱而已。</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$name = &apos;Jason&apos;;</span><br><span class="line">$nameRef = &amp;$name;</span><br><span class="line">$nameRef = &apos;JasonLai&apos;;</span><br><span class="line"></span><br><span class="line">echo $name; // 結果會印出 &apos;JasonLai&apos;</span><br></pre></td></tr></table></figure>
+<p><strong>特別注意</strong></p>
+<ol>
+<li>取參考不可用於一個未命名的表達式</li>
+<li>取參考也不可以用於參考回傳數值的函式</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$value = &amp;(10*10); // 發生錯誤，不可用於參考未命名的表達式</span><br><span class="line"></span><br><span class="line">function getValue()&#123;</span><br><span class="line">	return 22;</span><br><span class="line">&#125;</span><br><span class="line">$value = &amp;getValue(); // 發生錯誤，不可用於參考回傳函式</span><br></pre></td></tr></table></figure>
+<h2 id="predefined-variables"><a href="#predefined-variables" class="headerlink" title="predefined variables"></a>predefined variables</h2><p>PHP 已經有在腳本裡面預先定義了變數，這些稱為預定義變數。<br>透過使用預定義變數，可以幫助更快速的解決問題。<br>而根據 server 版本的不同，可能會有不同的預定義變數，因此這裡僅介紹一些常見的全域預定義變數。</p>
+<ol>
+<li><p>$GLOBAL:<br>可以取得所有的全域變數</p>
+</li>
+<li><p>$_SERVER:<br>可以取得有關 header, path… 等訊息</p>
+</li>
+<li><p>$_REQUEST:<br>儲存透過 HTML 表單傳來的資料</p>
+</li>
+<li><p>$_POST:<br>儲存透過 POST 方法傳來的資料</p>
+</li>
+<li><p>$_GET:<br>儲存透過 GET 方法傳來的資料</p>
+</li>
+<li><p>$_FILES:<br>儲存用 POST 方法上傳的檔案資料</p>
+</li>
+<li><p>$_ENV:<br>儲存所有 PHP 的環境變數</p>
+</li>
+<li><p>$_COOKIE:<br>儲存著所有 COOKIE 的資料</p>
+</li>
+<li><p>$_SESSION:<br>儲存著所有 SESSION 的資料</p>
+</li>
+</ol>
+<h2 id="variable-scope"><a href="#variable-scope" class="headerlink" title="variable scope"></a>variable scope</h2><p>變數的範圍是指說，變數被宣告、可以呼叫、可以被使用的範圍。<br>依據範圍的劃分可以分為</p>
+<ol>
+<li>全域變數： 表示在整個 PHP 檔案中都可以自由呼叫</li>
+<li>區域變數： 只有在宣告的範圍內可以成功呼叫</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">$globalVar = 20; // 屬於全域變數</span><br><span class="line"></span><br><span class="line">function calculateTimes()&#123;</span><br><span class="line">	$localVar = $globalVar * 2; // 屬於區預變數</span><br><span class="line">	echo $localVar; // 結果會印出 40</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">echo $globalVar; // 結果會印出 20</span><br><span class="line">echo $localVar; // 發生錯誤，因為沒有定義 $localVar 這個變數</span><br></pre></td></tr></table></figure>
+<h2 id="variable-variables"><a href="#variable-variables" class="headerlink" title="variable variables"></a>variable variables</h2><p>PHP 可以將變數當成一個新的變數的名稱，也就是說新的變數會有2個$符號，例如：$$name。<br>$$name 就是將 $name 當成一個名稱去建立新的變數，這2者是不一樣的！</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$var = &quot;hello&quot;;</span><br><span class="line">$$var = &quot;world&quot;;</span><br><span class="line">echo $var . &apos; &apos; . $$var; // 結果會印出 &apos;hello world&apos;</span><br></pre></td></tr></table></figure>
+<p>這個我認為是 PHP 提供的一個很好玩的特性，也許在某種層面上它也有很方便的實做效用~<br>因為 PHP 會利用變數的名稱去搜尋對應的變數或方法並加以執行，也就是說這種方式也可以利用到函式上，這同樣會在第7章提到。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$str1 = &quot;string 1&quot;;</span><br><span class="line">$string = &quot;str1&quot;;</span><br><span class="line">echo $string . &apos; &apos; . $$string; // 結果會印出 &apos;str1 string 1&apos;</span><br></pre></td></tr></table></figure>
+<h2 id="variables-from-external-sources"><a href="#variables-from-external-sources" class="headerlink" title="variables from external sources"></a>variables from external sources</h2><p>最後則是從外部傳來的資訊。<br>可以是透過 HTML 表單、GET方法或 POST方法傳來的資料</p>
+<ol>
+<li>HTML 表單 POST 範例</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;form action=&quot;foo.php&quot; method=&quot;post&quot;&gt;</span><br><span class="line">	Name: &lt;input type=&quot;text&quot; name=&quot;userName&quot; value=&quot;Jason&quot;/&gt;&lt;br/&gt;</span><br><span class="line">	Password: &lt;input type=&quot;password&quot; name=&quot;password&quot;/&gt;&lt;br/&gt;</span><br><span class="line">	&lt;input type=&quot;submit&quot; name=&quot;submit&quot; value=&quot;submit&quot;/&gt;&lt;br/&gt;</span><br><span class="line">&lt;/form&gt;</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>透過 GET 方法取得資料範例<br>只有透過 GET 方法傳遞的資料才能透過 _GET 取得</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$userName = _GET[&apos;userName&apos;];</span><br><span class="line">echo $userName;</span><br></pre></td></tr></table></figure>
+<ol start="3">
+<li>透過 POST 方法取得資料範例<br>只有透過 GET 方法傳遞的資料才能透過 _POST 取得</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$userName = _POST[&apos;userName&apos;];</span><br><span class="line">echo $userName; // 結果會印出 &apos;Jason&apos;</span><br></pre></td></tr></table></figure>
+      
 
-        <div class="article-info info-on-right">
-          
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -181,95 +267,106 @@
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/09/17/php-Variables/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/09/13/php-Types/" class="archive-article-date">
-  	<time datetime="2018-09-13T14:24:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-13</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2018/09/13/php-Types/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">php-Types</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/09/13/php-Types/">php-Types</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">php</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/09/10/php/" class="archive-article-date">
-  	<time datetime="2018-09-10T13:26:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-10</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/09/10/php/">php</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">php</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
   
 
-    
+  
 
 
           </div>
@@ -292,8 +389,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
