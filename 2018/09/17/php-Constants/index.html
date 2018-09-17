@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="JasonLai&#39;s blog">
 <meta property="og:description" content="這章主要介紹 PHP 的常數。常數的意思就是數值不會被改變的常量；和常數相反的就是變數，就是指可以被改變的變量。常數名稱的命名規則和變數相同，一樣不可以使用數字和特別符號當做名稱的開頭 而更詳細的內容會分成2個部分來介紹：  syntax magic contants">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-09-17T13:46:37.514Z">
+<meta property="og:updated_time" content="2018-09-17T13:50:37.404Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="php-Constants">
 <meta name="twitter:description" content="這章主要介紹 PHP 的常數。常數的意思就是數值不會被改變的常量；和常數相反的就是變數，就是指可以被改變的變量。常數名稱的命名規則和變數相同，一樣不可以使用數字和特別符號當做名稱的開頭 而更詳細的內容會分成2個部分來介紹：  syntax magic contants">
@@ -182,15 +182,8 @@
 <p><strong>2. const</strong><br>和 define 函式不同， const 是一個關鍵字而不是一個函式。<br>相較於 define() ，我個人感覺使用 const 關鍵字會更加直覺一點~<br><strong>但是使用 const 宣告常數的時候，常數是不會區分大小寫的</strong></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">const Name = &apos;Jason&apos;;</span><br><span class="line">const age = 30;</span><br><span class="line"></span><br><span class="line">echo Name; // 結果會印出 &apos;Jason&apos;</span><br><span class="line">echo age; // 結果會印出 30</span><br><span class="line">echo NAME; // 結果會印出 NAME，被當成一般文字印出</span><br></pre></td></tr></table></figure>
 <p><strong>補充</strong><br>1.在 PHP 5.6.0 之後，常數的數值可以做加乘的動作</p>
-<hr>
-<ol>
-<li><p>字串的加乘</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">const firstName = &apos;Jason&apos;;</span><br><span class="line">const lastName = &apos;Lai&apos;;</span><br><span class="line">const fullName = firstName . &apos; &apos; . lastName;</span><br><span class="line"></span><br><span class="line">echo fullName; // 結果會印出 &apos;Jason Lai&apos;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>數字的加乘</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">const baseNum = 10;</span><br><span class="line">const time = 2;</span><br><span class="line">const totalValue = baseNum * time;</span><br><span class="line"></span><br><span class="line">echo totalValue; // 結果會印出 20</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
+<p>1.字串的加乘<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">const firstName = &apos;Jason&apos;;</span><br><span class="line">const lastName = &apos;Lai&apos;;</span><br><span class="line">const fullName = firstName . &apos; &apos; . lastName;</span><br><span class="line"></span><br><span class="line">echo fullName; // 結果會印出 &apos;Jason Lai&apos;</span><br></pre></td></tr></table></figure></p>
+<p>2.數字的加乘<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">const baseNum = 10;</span><br><span class="line">const time = 2;</span><br><span class="line">const totalValue = baseNum * time;</span><br><span class="line"></span><br><span class="line">echo totalValue; // 結果會印出 20</span><br></pre></td></tr></table></figure></p>
 <h2 id="magic-contants"><a href="#magic-contants" class="headerlink" title="magic contants"></a>magic contants</h2><p>PHP 除了有預先定義好的變數之外，也有提供預先定義好的常數，這些常數就叫做 magic constants。<br>同樣的，在不同的延伸函式庫中會包含不同的魔術常數，需要引用對應的延伸函式庫才能使用這些常數。</p>
 <p>而前面提到常數被定義好之後是不能被更改數值的，下面會列出一些會隨著環境變化而改變數值的魔術常數：</p>
 <ol>
