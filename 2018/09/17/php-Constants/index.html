@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="JasonLai&#39;s blog">
 <meta property="og:description" content="這章主要介紹 PHP 的常數。常數的意思就是數值不會被改變的常量；和常數相反的就是變數，就是指可以被改變的變量。常數名稱的命名規則和變數相同，一樣不可以使用數字和特別符號當做名稱的開頭 而更詳細的內容會分成2個部分來介紹：  syntax magic contants">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-09-17T13:43:30.855Z">
+<meta property="og:updated_time" content="2018-09-17T13:46:37.514Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="php-Constants">
 <meta name="twitter:description" content="這章主要介紹 PHP 的常數。常數的意思就是數值不會被改變的常量；和常數相反的就是變數，就是指可以被改變的變量。常數名稱的命名規則和變數相同，一樣不可以使用數字和特別符號當做名稱的開頭 而更詳細的內容會分成2個部分來介紹：  syntax magic contants">
@@ -181,10 +181,9 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">define(&apos;Name&apos;, &apos;Jason&apos;, true);</span><br><span class="line">define(&apos;age&apos;, 30);</span><br><span class="line"></span><br><span class="line">echo NAME; // 結果會印出 &apos;Jason&apos;</span><br><span class="line">echo age; // 結果會印出 30</span><br><span class="line">echo AGE; // 結果會印出 AGE，因為沒有 AGE 這個常數，所以就被當成一般文字印出來</span><br></pre></td></tr></table></figure>
 <p><strong>2. const</strong><br>和 define 函式不同， const 是一個關鍵字而不是一個函式。<br>相較於 define() ，我個人感覺使用 const 關鍵字會更加直覺一點~<br><strong>但是使用 const 宣告常數的時候，常數是不會區分大小寫的</strong></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">const Name = &apos;Jason&apos;;</span><br><span class="line">const age = 30;</span><br><span class="line"></span><br><span class="line">echo Name; // 結果會印出 &apos;Jason&apos;</span><br><span class="line">echo age; // 結果會印出 30</span><br><span class="line">echo NAME; // 結果會印出 NAME，被當成一般文字印出</span><br></pre></td></tr></table></figure>
-<p><strong>補充</strong></p>
+<p><strong>補充</strong><br>1.在 PHP 5.6.0 之後，常數的數值可以做加乘的動作</p>
+<hr>
 <ol>
-<li><p>在 PHP 5.6.0 之後，常數的數值可以做加乘的動作</p>
-</li>
 <li><p>字串的加乘</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">const firstName = &apos;Jason&apos;;</span><br><span class="line">const lastName = &apos;Lai&apos;;</span><br><span class="line">const fullName = firstName . &apos; &apos; . lastName;</span><br><span class="line"></span><br><span class="line">echo fullName; // 結果會印出 &apos;Jason Lai&apos;</span><br></pre></td></tr></table></figure>
 </li>
