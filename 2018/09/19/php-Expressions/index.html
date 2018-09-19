@@ -6,15 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2018/9 | JasonLai&#39;s blog</title>
+  <title>php-Expressions | JasonLai&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="JasonLai&#39;s blog">
-<meta property="og:url" content="http://yoursite.com/archives/2018/09/index.html">
+  <meta name="description" content="這個章節要介紹 Expressions (表達式)，引用官方手冊對表達式的介紹就是Anything that has a value就是說任何有值的東西都屬於表達式的一部分聽起來有點抽象，但透過下面的說明相信可以幫助你更加了解一些~這章節主要會分成6個部分來討論：  Variable and Constant Function Expression Orientation Comparison C">
+<meta name="keywords" content="php">
+<meta property="og:type" content="article">
+<meta property="og:title" content="php-Expressions">
+<meta property="og:url" content="http://yoursite.com/2018/09/19/php-Expressions/index.html">
 <meta property="og:site_name" content="JasonLai&#39;s blog">
+<meta property="og:description" content="這個章節要介紹 Expressions (表達式)，引用官方手冊對表達式的介紹就是Anything that has a value就是說任何有值的東西都屬於表達式的一部分聽起來有點抽象，但透過下面的說明相信可以幫助你更加了解一些~這章節主要會分成6個部分來討論：  Variable and Constant Function Expression Orientation Comparison C">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-09-19T14:58:26.438Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JasonLai&#39;s blog">
+<meta name="twitter:title" content="php-Expressions">
+<meta name="twitter:description" content="這個章節要介紹 Expressions (表達式)，引用官方手冊對表達式的介紹就是Anything that has a value就是說任何有值的東西都屬於表達式的一部分聽起來有點抽象，但透過下面的說明相信可以幫助你更加了解一些~這章節主要會分成6個部分來討論：  Variable and Constant Function Expression Orientation Comparison C">
   
     <link rel="alternative" href="/atom.xml" title="JasonLai&#39;s blog" type="application/atom+xml">
   
@@ -140,36 +145,100 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-php-Expressions" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      php-Expressions
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/09/19/php-Expressions/" class="archive-article-date">
+
+        
+        <a href="/2018/09/19/php-Expressions/" class="archive-article-date">
   	<time datetime="2018-09-19T14:58:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-19</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/09/19/php-Expressions/">php-Expressions</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>這個章節要介紹 Expressions (表達式)，<br>引用官方手冊對表達式的介紹就是<strong>Anything that has a value</strong><br>就是說任何有值的東西都屬於表達式的一部分<br>聽起來有點抽象，但透過下面的說明相信可以幫助你更加了解一些~<br>這章節主要會分成6個部分來討論：</p>
+<ol>
+<li>Variable and Constant</li>
+<li>Function</li>
+<li>Expression Orientation</li>
+<li>Comparison</li>
+<li>Combined</li>
+<li>Ternary conditional operator</li>
+</ol>
+<a id="more"></a>
+<h2 id="Variable-and-Constant"><a href="#Variable-and-Constant" class="headerlink" title="Variable and Constant"></a>Variable and Constant</h2><p>這個部分會討論變數和常數。<br>來看看下面的 2 個範例：</p>
+<ol>
+<li>我把 5 這個數值指派給 var 這個變數<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$var = 5;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>我們可以說 5是值為5的整數常數表達式。</p>
+<ol start="2">
+<li>我把 var 這個變數指派給另一個名為 var2 的變數<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$var2 = $var;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>我們可以說 var是值為5的變數表達式。<br>因為從第 1 個範例，我們已經將 var 的數值變成了5，然而 var 的數值是可以被改變的<br>因此才會說 var是值為5的變數表達式。</p>
+<p>這些我們一般指派數值的情況都可以被視為一個表達式。<br>也可以說任何能被撰寫出來表達意圖的式子都能看做表達式。</p>
+<h2 id="Function"><a href="#Function" class="headerlink" title="Function"></a>Function</h2><p>再來看函式的部分。</p>
+<p>把 getValue 這個函式回傳的數值指配給 var 這個變數<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">function getValue()&#123;</span><br><span class="line">	return 100;</span><br><span class="line">&#125;</span><br><span class="line">$var = getValue();</span><br></pre></td></tr></table></figure></p>
+<p>我們可以說 getValue 這個函式是回傳數值 100 的表達式。</p>
+<h2 id="Expression-Orientation"><a href="#Expression-Orientation" class="headerlink" title="Expression Orientation"></a>Expression Orientation</h2><p>這部分要說明表達式順序的變化。<br>就像我們以往學過的先乘除後加減..等等，我們可以透過表達式的順序或加上括號來正確表達出我們的意圖。<br>先來一個範例快速認識一下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$a = 5;$b = 5;</span><br><span class="line"></span><br><span class="line">$a = 5;$b = $a;</span><br><span class="line"></span><br><span class="line">$b = ($a = 5);</span><br><span class="line"></span><br><span class="line">$b = $a = 5;</span><br></pre></td></tr></table></figure></p>
+<p>這 4 種表達式都表達了同一種意圖，就是將 a 變數和 b 變數的數值指派為 5。<br>變數的指派是由右到左，再搭配括號就可以寫出相同意思但不同型式的表達式。</p>
+<p><strong>1. 前置計算表達式</strong><br>多數程式語言中，將某變數加 1 的動作可簡化成 ++ 這個符號。<br>而前置計算表達式就是先進行 ++ 的動作，再將加完後的結果拿去做後續的計算。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$originValue = 1;</span><br><span class="line">$newValue = ++$originValue;</span><br><span class="line"></span><br><span class="line">echo $originValue; // 結果會印出 1</span><br><span class="line">echo $newValue; // 結果會印出 2</span><br></pre></td></tr></table></figure>
+<p><strong>2. 後置計算表達式</strong><br>後置計算表達式則和前置計算表達式相反，會先用變數的數值去計算，再將變數進行 ++ 的動作。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$originValue = 1;</span><br><span class="line">$newValue = $originValue;++</span><br><span class="line"></span><br><span class="line">echo $originValue; // 結果會印出 2</span><br><span class="line">echo $newValue; // 結果會印出 1</span><br></pre></td></tr></table></figure>
+<h2 id="Comparison"><a href="#Comparison" class="headerlink" title="Comparison"></a>Comparison</h2><p>這部分會介紹比較的運算符號，通常可以用於判斷的表達式，並依據結果回傳 true 或 false。<br>以下列出在 PHP 中可以使用的比較運算符號：</p>
+<ol>
+<li><blockquote>
+</blockquote>
+大於</li>
+<li><blockquote>
+<p>=<br>大於等於</p>
+</blockquote>
+</li>
+<li>==<br>數值相同</li>
+<li>!=<br>數值不同</li>
+<li>&lt;<br>小於</li>
+<li>&lt;=<br>小於等於</li>
+<li>===<br>數值相同、型態也相同</li>
+<li>!==<br>數值不同或型態不同</li>
+</ol>
+<p>當滿足以上描述的情況時，就慧回傳 true，反之則回傳 false。</p>
+<h2 id="Combined"><a href="#Combined" class="headerlink" title="Combined"></a>Combined</h2><p>在撰寫加減乘除這些運算符號類的計算表達式時，可以使用結合的方式，將2種運算符號結合<br>變成一個更簡化的表達式。<br>例如： $a + 3 可以簡化成 $a += 3，兩個表達式都同樣代表將 a 這個變數加上 3。<br>同樣的結合運算表達式還有：</p>
+<ol>
+<li>+=</li>
+<li>-=</li>
+<li>*=</li>
+<li>/=</li>
+<li>%=<br>使用這些結合的運算符號，可以幫助更方便、快速完成一個表達式。</li>
+</ol>
+<h2 id="Ternary-conditional-operator"><a href="#Ternary-conditional-operator" class="headerlink" title="Ternary conditional operator"></a>Ternary conditional operator</h2><p>這部分要討論結合變數和判斷的三重表達式。<br>簡單來說就是將判斷的情況以及 true 和 false 的結果結合成單行表達式。<br>下面先用中文來表達實際的句法：<br><strong>要檢查的判斷 ? 符合的數值 : 不符合的數值</strong><br>在語法結構相似或是程式較為簡短的時候，都可以用這種表達式取代 if/else 的語句，在整體上會使得程式碼更為簡潔。</p>
+<ol>
+<li><p>使用三重表達式去指派數值給變數</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$age = 12;</span><br><span class="line">$required_price = $age &gt; 12 ? 300 : 150;</span><br><span class="line">echo $required_price; // 結果會印出 150</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在函式中用三重表達式回傳數值</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">function getPrice($age)&#123;</span><br><span class="line">	return $age &gt; 12 ? 300 : 150;</span><br><span class="line">&#125;</span><br><span class="line">$age = 12;</span><br><span class="line">echo getPrice($age); // 結果會印出 150;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>實際的運用還可以有其他更複雜的變化，但若運用得當，則可以達到簡化程式碼的功效~</p>
 
-        <div class="article-info info-on-right">
-          
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -181,171 +250,106 @@
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/09/19/php-Expressions/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/09/17/php-Constants/" class="archive-article-date">
-  	<time datetime="2018-09-17T13:43:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-17</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2018/09/17/php-Constants/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">php-Constants</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/09/17/php-Constants/">php-Constants</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">php</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/09/17/php-Variables/" class="archive-article-date">
-  	<time datetime="2018-09-16T16:33:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-17</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/09/17/php-Variables/">php-Variables</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">php</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/09/13/php-Types/" class="archive-article-date">
-  	<time datetime="2018-09-13T14:24:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-13</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/09/13/php-Types/">php-Types</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">php</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/09/10/php/" class="archive-article-date">
-  	<time datetime="2018-09-10T13:26:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-10</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/09/10/php/">php</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">php</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -368,8 +372,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
