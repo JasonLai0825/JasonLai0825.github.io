@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="JasonLai&#39;s blog">
 <meta property="og:description" content="這個章節要介紹 Expressions (表達式)，引用官方手冊對表達式的介紹就是Anything that has a value就是說任何有值的東西都屬於表達式的一部分聽起來有點抽象，但透過下面的說明相信可以幫助你更加了解一些~這章節主要會分成6個部分來討論：  Variable and Constant Function Expression Orientation Comparison C">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-09-19T14:58:26.438Z">
+<meta property="og:updated_time" content="2018-09-19T15:01:30.430Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="php-Expressions">
 <meta name="twitter:description" content="這個章節要介紹 Expressions (表達式)，引用官方手冊對表達式的介紹就是Anything that has a value就是說任何有值的東西都屬於表達式的一部分聽起來有點抽象，但透過下面的說明相信可以幫助你更加了解一些~這章節主要會分成6個部分來討論：  Variable and Constant Function Expression Orientation Comparison C">
@@ -196,15 +196,8 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$originValue = 1;</span><br><span class="line">$newValue = ++$originValue;</span><br><span class="line"></span><br><span class="line">echo $originValue; // 結果會印出 1</span><br><span class="line">echo $newValue; // 結果會印出 2</span><br></pre></td></tr></table></figure>
 <p><strong>2. 後置計算表達式</strong><br>後置計算表達式則和前置計算表達式相反，會先用變數的數值去計算，再將變數進行 ++ 的動作。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$originValue = 1;</span><br><span class="line">$newValue = $originValue;++</span><br><span class="line"></span><br><span class="line">echo $originValue; // 結果會印出 2</span><br><span class="line">echo $newValue; // 結果會印出 1</span><br></pre></td></tr></table></figure>
-<h2 id="Comparison"><a href="#Comparison" class="headerlink" title="Comparison"></a>Comparison</h2><p>這部分會介紹比較的運算符號，通常可以用於判斷的表達式，並依據結果回傳 true 或 false。<br>以下列出在 PHP 中可以使用的比較運算符號：</p>
-<ol>
-<li><blockquote>
-</blockquote>
-大於</li>
-<li><blockquote>
-<p>=<br>大於等於</p>
-</blockquote>
-</li>
+<h2 id="Comparison"><a href="#Comparison" class="headerlink" title="Comparison"></a>Comparison</h2><p>這部分會介紹比較的運算符號，通常可以用於判斷的表達式，並依據結果回傳 true 或 false。<br>以下列出在 PHP 中可以使用的比較運算符號：<br>1.&gt;<br>大於<br>2.&gt;=<br>大於等於</p>
+<ol start="3">
 <li>==<br>數值相同</li>
 <li>!=<br>數值不同</li>
 <li>&lt;<br>小於</li>
