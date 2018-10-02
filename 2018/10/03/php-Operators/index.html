@@ -6,15 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Tag: php | JasonLai&#39;s blog</title>
+  <title>php-Operators | JasonLai&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="JasonLai&#39;s blog">
-<meta property="og:url" content="http://yoursite.com/tags/php/index.html">
+  <meta name="description" content="這個章節要介紹的是 Operators (運算符號)，運算符號可以有很多種形式，除了一些在 PHP 內才能使用的運算符號之外，例如：. 可以將字串相加…除了那些特例之外，在通常的情況下，這些運算符號也都同樣可以運用在其他的程式語言上~而在這章節，我主要會分成 12 個小部分來討論：  Operator Precedence Arithmetic Operators Assignment Opera">
+<meta name="keywords" content="php">
+<meta property="og:type" content="article">
+<meta property="og:title" content="php-Operators">
+<meta property="og:url" content="http://yoursite.com/2018/10/03/php-Operators/index.html">
 <meta property="og:site_name" content="JasonLai&#39;s blog">
+<meta property="og:description" content="這個章節要介紹的是 Operators (運算符號)，運算符號可以有很多種形式，除了一些在 PHP 內才能使用的運算符號之外，例如：. 可以將字串相加…除了那些特例之外，在通常的情況下，這些運算符號也都同樣可以運用在其他的程式語言上~而在這章節，我主要會分成 12 個小部分來討論：  Operator Precedence Arithmetic Operators Assignment Opera">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-10-02T16:15:06.381Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JasonLai&#39;s blog">
+<meta name="twitter:title" content="php-Operators">
+<meta name="twitter:description" content="這個章節要介紹的是 Operators (運算符號)，運算符號可以有很多種形式，除了一些在 PHP 內才能使用的運算符號之外，例如：. 可以將字串相加…除了那些特例之外，在通常的情況下，這些運算符號也都同樣可以運用在其他的程式語言上~而在這章節，我主要會分成 12 個小部分來討論：  Operator Precedence Arithmetic Operators Assignment Opera">
   
     <link rel="alternative" href="/atom.xml" title="JasonLai&#39;s blog" type="application/atom+xml">
   
@@ -140,36 +145,114 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-php-Operators" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      php-Operators
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/10/03/php-Operators/" class="archive-article-date">
+
+        
+        <a href="/2018/10/03/php-Operators/" class="archive-article-date">
   	<time datetime="2018-10-02T16:15:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-03</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/10/03/php-Operators/">php-Operators</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>這個章節要介紹的是 Operators (運算符號)，<br>運算符號可以有很多種形式，除了一些在 PHP 內才能使用的運算符號之外，例如：<strong>.</strong> 可以將字串相加…<br>除了那些特例之外，在通常的情況下，這些運算符號也都同樣可以運用在其他的程式語言上~<br>而在這章節，我主要會分成 12 個小部分來討論：</p>
+<ol>
+<li>Operator Precedence</li>
+<li>Arithmetic Operators</li>
+<li>Assignment Operators</li>
+<li>Bitwise Operators</li>
+<li>Comparison Operators</li>
+<li>Error Control Operators</li>
+<li>Execution Operators</li>
+<li>Incrementing/Decrementing Operators</li>
+<li>Logical Operators</li>
+<li>String Operators</li>
+<li>Array Operators</li>
+<li>Type Operators</li>
+</ol>
+<a id="more"></a>
+<h2 id="Operator-Precedence"><a href="#Operator-Precedence" class="headerlink" title="Operator Precedence"></a>Operator Precedence</h2><p>首先，我們會先提到運算元的優先順序。<br>就像以前學過的<strong>先乘除後加減</strong>一樣，在運算式裡也同樣是這樣~<br>也可以透過<strong>() 括號</strong>來完成符合期望的計算式</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$var = 1 + 2 * 3;</span><br><span class="line">echo $var; // 結果會印出 7</span><br><span class="line"></span><br><span class="line">$var = (1 + 2) * 3;</span><br><span class="line">echo $var; // 結果會印出 9</span><br></pre></td></tr></table></figure>
+<h2 id="Arithmetic-Operators"><a href="#Arithmetic-Operators" class="headerlink" title="Arithmetic Operators"></a>Arithmetic Operators</h2><p>接續前一部分，這邊要提到的是算數運算符號，就是加減乘除…等算數運算符號。<br>而在 PHP 或是其他程式語言當中就是 +-*/<br>而除法又可以分為 <strong>/</strong> 和 <strong>%</strong><br>它們的差異在於：</p>
+<ol>
+<li><p>當你使用 <strong>/</strong> 的時候，會得到計算完的商數<br><strong>在數字無法整除的情況下，使用 / 符號做除法運算會回傳浮點數型態</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$var = 7 / 2;</span><br><span class="line">echo $var; // 3.5</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>而使用 <strong>%</strong> 做除法的時候，會得到計算完的餘數</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$var = 7 % 2;</span><br><span class="line">echo $var; // 1</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>另外要提到 ** 這個算數運算符號，它在 PHP 當中代表的是次方的意思。<br>詳細請看下方範例說明~<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$var = 2 ** 3;</span><br><span class="line">echo $var; // 8</span><br></pre></td></tr></table></figure></p>
+<p>適當的使用這些算數運算符號可以幫助我們寫出更精簡且更正確的運算式~</p>
+<h2 id="Assignment-Operators"><a href="#Assignment-Operators" class="headerlink" title="Assignment Operators"></a>Assignment Operators</h2><p>再來要提到的是分配運算符號，顧名思義就是賦予變數/常數數值得運算符號。<br>= 就是屬於這類的運算符號。<br>在之前第 4 章介紹 Expressions 的時候，我們有提到使用結合運算符號的方式去簡化表達式<br>像這類結合的也可以拆分成分配的運算式。<br>例如：<br>$var <em>= 2; 等同於 $var = $var </em> 2;</p>
+<p>不過在多數時候，應該多數人會採用前面的寫法，能夠更加方便快速的完成一個計算式~</p>
+<h2 id="Bitwise-Operators"><a href="#Bitwise-Operators" class="headerlink" title="Bitwise Operators"></a>Bitwise Operators</h2><p>接下來是位元運算符號，這個部分需要先了解一下什麼是 2 進位~<br>2 進位就是將某一個數字以 0 和 1 (不超過 2) 的方式做轉換<br>而數字由右到左分別代表 2 的 0, 1 … 次方<br>將這些計算得到的數字加總即可。</p>
+<p>用範例可以說明得更加清楚~<br>例如：<br>數字 5 的 2 進位就是 101<br>就是 2 的0次方加上 2 的2次方就會等於 5<br><strong>由右到左是 0, 1, 2，而數字 1 代表這個部分有值，因此就會是 2 的 0次方和 2次方</strong></p>
+<p>在了解 2 進位之後，再接續看位元運算符號的部分<br>(在儲存 2進位的數值時，要記得在最前面加上 0，這樣數值才會被辨識為 2進位)</p>
+<p><strong> 1. &amp; (And)</strong><br>當使用 &amp; 的時候，只有當兩個 2進位數值都是 1的時候，才會為 1。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$a = 0111;</span><br><span class="line">$b = 0010;</span><br><span class="line">$var = $a &amp; $b; // 0010</span><br><span class="line">echo $var; // 2</span><br></pre></td></tr></table></figure></p>
+<p><strong> 2. | (Or)</strong><br>當使用 | 的時候，只要任一個數值是 1，出來的結果就會為 1。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$a = 0111;</span><br><span class="line">$b = 0010;</span><br><span class="line">$var = $a | $b; // 0111</span><br><span class="line">echo $var; // 7</span><br></pre></td></tr></table></figure></p>
+<p><strong> 3. ^ (Xor)</strong><br>當使用 ^ 的時候，只有其中一個數值是 1的情況下，才會為 1，當兩個數值都同樣是 1的時候，就會為 0。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$a = 0111;</span><br><span class="line">$b = 0010;</span><br><span class="line">$var = $a ^ $b; // 0101</span><br><span class="line">echo $var; // 5</span><br></pre></td></tr></table></figure></p>
+<p><strong> 4. ~ (Not)</strong><br>當使用 ~ 的時候，會將數值 1 和 0 調換，換言之就是將數值 1 變成 0、0 變成 1。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$a = 0010;</span><br><span class="line">$var = ~$a; // 1101</span><br><span class="line">echo $var; // 13</span><br></pre></td></tr></table></figure></p>
+<p><strong> 5. &lt;&lt; (Shift left)</strong><br>當使用 &lt;&lt; 的時候，會將 2 進位數值進行向左移動的調整，並遞補上 0，調整的位數由右邊的數字決定。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$a = 0010;</span><br><span class="line">$var = $a &lt;&lt; 2; // 1000</span><br><span class="line">echo $var; // 8</span><br></pre></td></tr></table></figure></p>
+<p><strong> 6. &gt;&gt; (Shift right)</strong><br>當使用 &lt;&lt; 的時候，會將 2 進位數值進行向右移動的調整，並遞補上 0，調整的位數由左邊的數字決定。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$a = 0010;</span><br><span class="line">$var = $a &gt;&gt; 1; // 0001</span><br><span class="line">echo $var; // 1</span><br></pre></td></tr></table></figure></p>
+<h2 id="Comparison-Operators"><a href="#Comparison-Operators" class="headerlink" title="Comparison Operators"></a>Comparison Operators</h2><p>緊接著，我們要談到比較運算符號~<br>簡單來說就是用來比較 2變數的關係，並根據結果回傳 TRUE 或 FALSE。<br>底下用條列的方式簡單列出各種比較運算符號：</p>
+<ol>
+<li>==<br>用來判斷 2變數的數值是否相等。</li>
+<li>===<br>用來判斷 2變數的數值以及型態是否都相等</li>
+<li>!= 也可以使用 &lt;&gt;<br>用來判斷 2變數的數值是否不相等</li>
+<li>!==<br>用來比較 2變數的數值以及型態是否都不相等</li>
+<li><blockquote>
+</blockquote>
+用來比較左邊變數的數值是否大於右邊變數的數值</li>
+<li>&lt;<br>用來比較左邊變數的數值是否小於右邊變數的數值</li>
+<li><blockquote>
+<p>=<br>用來比較左邊變數的數值是否大於等於右邊變數的數值</p>
+</blockquote>
+</li>
+<li>&lt;=<br>用來比較左邊變數的數值是否小於等於右邊變數的數值</li>
+<li>&lt;=&gt;<br>對兩邊的變數進行 3重判斷。</li>
+<li>當兩邊數值相同的時候，會回傳 0</li>
+<li>當左邊數值比較大的時候，會回傳 1</li>
+<li>當右邊數值比較大的時候，會回傳 -1</li>
+</ol>
+<h2 id="Error-Control-Operators"><a href="#Error-Control-Operators" class="headerlink" title="Error Control Operators"></a>Error Control Operators</h2><p>這裡我們要提到錯誤控制運算符號。<br>當我們不希望後面的運算式發出錯誤訊息進而中斷程式的執行時<br>可以加上 @ 符號，它會自動忽略後續表達式所產生出來的錯誤訊息<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">echo @$values[&apos;name&apos;];</span><br></pre></td></tr></table></figure></p>
+<p>與之相對的是，我們可以使用 try catch 的方式來抓取程式碼產生的錯誤，並加以處理，避免程式碼發生錯誤中斷執行。<br>而這會在之後的章節中提到~</p>
+<h2 id="Execution-Operators"><a href="#Execution-Operators" class="headerlink" title="Execution Operators"></a>Execution Operators</h2><p>再來~ 這部分要討論的是執行運算符號。<br>在 PHP 中使用 <strong>` 符號(注意不是 ‘ )</strong>的時候，PHP 會試圖用 shell command (命令提示字元) 的方式去執行裡面的程式碼<br>你也可以使用 shell_exec() 函式達到同樣的效果~</p>
+<h2 id="Incrementing-Decrementing-Operators"><a href="#Incrementing-Decrementing-Operators" class="headerlink" title="Incrementing/Decrementing Operators"></a>Incrementing/Decrementing Operators</h2><p>接下來的這部分要談到遞增/遞減運算符號，也可以區分成前置運算符和後置運算符<br>像之前的章節曾經提過的<br>++$var、–$var<br>$var++、$var–<br>對運算都會有不同的效果，這邊就不在多做解釋了~<br>想要了解的人可以參考第 4 章 PHP-Expressions~</p>
+<h2 id="Logical-Operators"><a href="#Logical-Operators" class="headerlink" title="Logical Operators"></a>Logical Operators</h2><p>這部分要談的是邏輯運算符號，和位元運算符號有點類似，但實際是很不一樣的!<br>邏輯運算符號主要是用來判斷兩邊條件式的結果，再依據結果回傳 TRUE 或 FALSE。<br>而位元運算符號是針對 2進位的數值進行調整、計算，回傳的結果也會是數值。</p>
+<p><strong> 1. &amp;&amp; 也可以寫成 and</strong><br>當兩邊條件式都為 TRUE 的情況下，才會為 TRUE。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$a = 3;</span><br><span class="line">$b = 5;</span><br><span class="line">echo ($a &gt; 0) &amp;&amp; ($b &gt; 0); // TRUE</span><br></pre></td></tr></table></figure></p>
+<p><strong> 2. || 也可以寫成 or</strong><br>當兩邊條件式其中一個為 TRUE 的情況下，結果就會為 TRUE。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$a = 3;</span><br><span class="line">$b = 5;</span><br><span class="line">echo ($a &gt; 0) || ($b &lt; 0); // TRUE</span><br></pre></td></tr></table></figure></p>
+<p><strong> 3. xor</strong><br>當兩邊條件式只有一個為 TRUE 的情況下，才會為 TRUE，若兩個都為 TRUE，則結果會為 FALSE。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$a = 3;</span><br><span class="line">$b = 5;</span><br><span class="line">echo ($a &gt; 0) xor ($b &gt; 0); // FALSE</span><br></pre></td></tr></table></figure></p>
+<p><strong> 4. ! (not)</strong><br>將調建式的結果做轉換，換言之就是將 TRUE 轉為 FALSE；FALSE 轉為 TRUE<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$a = 3;</span><br><span class="line">echo !($a &lt; 0); // TRUE</span><br></pre></td></tr></table></figure></p>
+<h2 id="String-Operators"><a href="#String-Operators" class="headerlink" title="String Operators"></a>String Operators</h2><p>在這部分要談到字串運算符號<br>其實就是 <strong>. 和 .=</strong><br>透過這種方式可以將兩個字串做相加<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$var = &quot;hello&quot;;</span><br><span class="line">$var .= &quot; world&quot;;</span><br><span class="line">echo $var; // &quot;hello world&quot;</span><br></pre></td></tr></table></figure></p>
+<h2 id="Array-Operators"><a href="#Array-Operators" class="headerlink" title="Array Operators"></a>Array Operators</h2><p>接下來的這部分則是談到陣列運算符號<br>判斷的方式和前面提過的相同，這部分主要是要說明這些運算符號也同樣可以使用在陣列上<br>下方用條列方式列出相關運算符號：</p>
+<ol>
+<li>+<br>將兩陣列元素相加</li>
+<li>==<br>比較兩陣列是否有相同的元素</li>
+<li>===<br>比較兩陣列在相同的位置上是否有相同的元素</li>
+<li>!= 也可以寫成 &lt;&gt;<br>比較兩陣列元素是否不相同</li>
+<li>!==<br>比較兩陣列在相同的位置上是否有不一樣的元素</li>
+</ol>
+<h2 id="Type-Operators"><a href="#Type-Operators" class="headerlink" title="Type Operators"></a>Type Operators</h2><p>終於到了最後一個部分了~<br>最後我們要提到的是型態運算符號，也可以說是關鍵字<br>當我們想知道某個物件是否由某類別所實做，可以使用 instanceof 做判斷。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">class classOne&#123;</span><br><span class="line">	// do something...</span><br><span class="line">&#125;</span><br><span class="line">class classTwo&#123;</span><br><span class="line">	// do something...</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">$obj = new classOne();</span><br><span class="line">echo $obj instanceof classOne; // TRUE</span><br><span class="line">echo $obj instanceof classTwo; // FALSE</span><br></pre></td></tr></table></figure></p>
+<p>透過這種方式，我們可以了解該物件是屬於哪個類別，並做後續的程式處理~</p>
 
-        <div class="article-info info-on-right">
-          
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -181,209 +264,106 @@
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/10/03/php-Operators/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/09/19/php-Expressions/" class="archive-article-date">
-  	<time datetime="2018-09-19T14:58:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-19</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2018/09/19/php-Expressions/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">php-Expressions</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/09/19/php-Expressions/">php-Expressions</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">php</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/09/17/php-Constants/" class="archive-article-date">
-  	<time datetime="2018-09-17T13:43:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-17</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/09/17/php-Constants/">php-Constants</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">php</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/09/17/php-Variables/" class="archive-article-date">
-  	<time datetime="2018-09-16T16:33:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-17</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/09/17/php-Variables/">php-Variables</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">php</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/09/13/php-Types/" class="archive-article-date">
-  	<time datetime="2018-09-13T14:24:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-13</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/09/13/php-Types/">php-Types</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">php</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/09/10/php/" class="archive-article-date">
-  	<time datetime="2018-09-10T13:26:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-10</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/09/10/php/">php</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">php</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -406,9 +386,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
