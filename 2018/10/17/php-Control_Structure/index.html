@@ -6,15 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Tag: php | JasonLai&#39;s blog</title>
+  <title>PHP-Control_structure | JasonLai&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="JasonLai&#39;s blog">
-<meta property="og:url" content="http://yoursite.com/tags/php/index.html">
+  <meta name="description" content="到了這個章節，我們要提到的是控制結構~這其實就有點像是我們日常生活中的流程控制如果…就…，諸如此類的而在程式語言中，就是利用這些控制結構去幫助程式碼可以按照我們所想的執行。在這章節我會分成 8 個部分來討論，分別是：  Condition Judgement Loop Switch Case Return Add reference of PHP file Goto">
+<meta name="keywords" content="php">
+<meta property="og:type" content="article">
+<meta property="og:title" content="PHP-Control_structure">
+<meta property="og:url" content="http://yoursite.com/2018/10/17/php-Control_Structure/index.html">
 <meta property="og:site_name" content="JasonLai&#39;s blog">
+<meta property="og:description" content="到了這個章節，我們要提到的是控制結構~這其實就有點像是我們日常生活中的流程控制如果…就…，諸如此類的而在程式語言中，就是利用這些控制結構去幫助程式碼可以按照我們所想的執行。在這章節我會分成 8 個部分來討論，分別是：  Condition Judgement Loop Switch Case Return Add reference of PHP file Goto">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-10-17T14:17:59.177Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JasonLai&#39;s blog">
+<meta name="twitter:title" content="PHP-Control_structure">
+<meta name="twitter:description" content="到了這個章節，我們要提到的是控制結構~這其實就有點像是我們日常生活中的流程控制如果…就…，諸如此類的而在程式語言中，就是利用這些控制結構去幫助程式碼可以按照我們所想的執行。在這章節我會分成 8 個部分來討論，分別是：  Condition Judgement Loop Switch Case Return Add reference of PHP file Goto">
   
     <link rel="alternative" href="/atom.xml" title="JasonLai&#39;s blog" type="application/atom+xml">
   
@@ -140,36 +145,113 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-php-Control_Structure" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      PHP-Control_structure
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/10/17/php-Control_Structure/" class="archive-article-date">
+
+        
+        <a href="/2018/10/17/php-Control_Structure/" class="archive-article-date">
   	<time datetime="2018-10-17T14:32:48.974Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-17</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/10/17/php-Control_Structure/">PHP-Control_structure</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>到了這個章節，我們要提到的是控制結構~<br>這其實就有點像是我們日常生活中的流程控制<br>如果…就…，諸如此類的<br>而在程式語言中，就是利用這些控制結構去幫助程式碼可以按照我們所想的執行。<br>在這章節我會分成 8 個部分來討論，分別是：</p>
+<ol>
+<li>Condition Judgement</li>
+<li>Loop</li>
+<li>Switch Case</li>
+<li>Return</li>
+<li>Add reference of PHP file</li>
+<li>Goto</li>
+</ol>
+<a id="more"></a>
+<h2 id="Condition-Judgement"><a href="#Condition-Judgement" class="headerlink" title="Condition Judgement"></a>Condition Judgement</h2><p>這部分主要就是在談條件判斷<br>就像剛剛說的，如果…就…<br>在這一小節會提到該如何用語法來表達這一個部分。<br>這部分主要會介紹以下 3 種語法的使用：</p>
+<ol>
+<li>if</li>
+<li>else</li>
+<li>elseif or else if</li>
+</ol>
+<p>##1. if<br>這語法就像是我們常說的<strong>如果</strong><br>會依據條件式做判斷，並回傳 TRUE 或 FALSE。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">if(true)</span><br><span class="line">	echo &quot;correct!&quot;; // 結果會印出 correct!</span><br></pre></td></tr></table></figure></p>
+<p>##2. else<br>這語法就像是我們常說的<strong>否則</strong><br>當 if 條件式為 FALSE 的時候，就會呼叫 else 裡面的程式碼。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">if(false)</span><br><span class="line">	echo &quot;correct!&quot;;</span><br><span class="line">else</span><br><span class="line">	echo &quot;incorrect!&quot;; // 結果會印出 incorrect!</span><br></pre></td></tr></table></figure>
+<p>##3. elseif or else if<br>當想要使用多個條件判斷時，可以使用 else if<br>而在 PHP 裡也可以寫成 elseif。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$num = 15;</span><br><span class="line"></span><br><span class="line">if($num &gt; 20)</span><br><span class="line">	echo &quot;the number is bigger than 20&quot;;</span><br><span class="line">else if($num &lt; 20 &amp;&amp; $num &gt; 10)</span><br><span class="line">	echo &quot;the number is in the range of 20 to 10&quot;;</span><br><span class="line">else</span><br><span class="line">	echo &quot;the number is less than 10&quot;;</span><br></pre></td></tr></table></figure></p>
+<h2 id="Loop"><a href="#Loop" class="headerlink" title="Loop"></a>Loop</h2><p>在來要提到迴圈<br>使用迴圈可以幫助我們重複執行一段程式碼。<br>底下會介紹不同迴圈的種類以及相關用法：</p>
+<ol>
+<li>while</li>
+<li>do while</li>
+<li>for</li>
+<li>foreach</li>
+</ol>
+<p>##1. while<br>若條件式為 TRUE，則持續執行程式碼直到條件式為 FALSE 才停止。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$num = 0;</span><br><span class="line"></span><br><span class="line">while($num &lt; 3)&#123;</span><br><span class="line">	echo $num++; </span><br><span class="line">&#125; </span><br><span class="line">// 執行完會印出 012</span><br></pre></td></tr></table></figure></p>
+<p>另外在 PHP 當中，也可以使用 <strong> while 和 endwhile </strong> 來當作程式碼的範圍 (取代 {} 間括號)<br><strong>不要忘記在 while 後面接上一個冒號</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$num = 0;</span><br><span class="line"></span><br><span class="line">while($num &lt; 3):</span><br><span class="line">	echo $num++; </span><br><span class="line">endwhile </span><br><span class="line">// 執行完同樣會印出 012</span><br></pre></td></tr></table></figure></p>
+<p>##2. do while<br>同樣是持續執行程式碼直到條件式為 FALSE 才停止。<br>不過差異在於，使用 do while 的時候，會先執行 do 裡面的程式碼，再去判斷是否有符合條件式<br>因此，使用 do while 必定可以執行一次程式碼。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$num = 0;</span><br><span class="line">do&#123;</span><br><span class="line">	echo $num;</span><br><span class="line">&#125;while($num &gt; 3);</span><br><span class="line">// 執行完會印出 0</span><br></pre></td></tr></table></figure></p>
+<p>##3. for<br>for 迴圈提供 3 個參數，由左到右分別是</p>
+<ol>
+<li>迴圈起始參數</li>
+<li>迴圈結束條件</li>
+<li>迴圈如何進行</li>
+</ol>
+<p><strong>特別要注意的是，這 3 個參數都不提供也可以正常執行，但要小心別讓它變成無窮迴圈，也就是不會停止的迴圈</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">for($i = 0; $i &lt; 3; $i++)</span><br><span class="line">	echo $i;</span><br><span class="line">// 執行完會印出 012</span><br></pre></td></tr></table></figure></p>
+<p>你也可以選擇將 for 迴圈寫成單行的形式，詳細範例如下：<br>有幾個小重點在於：</p>
+<ol>
+<li>同樣是 3 個參數，不過在迴圈進行的部分 (第 3 個參數)以逗號進行分隔，撰寫迴圈執行的程序</li>
+<li>這裡使用 print 而非 echo，因為 print 會返回回傳值，因此可以當成一個普通函式來呼叫，並且可以用在較複雜的運算式中~<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">for($i = 0; $i &lt; 3; $i++, print $i);</span><br><span class="line">// 執行完會印出 123</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>PHP 針對 for 迴圈，一樣提供了使用 <strong> for 和 endfor </strong> 來當作程式碼的範圍 (取代 {} 間括號)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">for($i = 0; $i &lt; 3; $i++):</span><br><span class="line">	echo $i;</span><br><span class="line">endfor</span><br><span class="line">// 執行完會印出 012</span><br></pre></td></tr></table></figure></p>
+<p>##4. foreach<br>最後要介紹 foreach，可以快速取得陣列中每個元素的 key 和 value。<br>就我個人認為在 PHP 當中，使用 foreach 的頻率大於使用 for 迴圈<br>是一個非常方便的語句~<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$numGroup = array(1, 2, 3);</span><br><span class="line"></span><br><span class="line">foreach($numGroup as $key =&gt; $value)</span><br><span class="line">	echo &quot;$key =&gt; $value&lt;br&gt;&quot;;</span><br><span class="line">// 執行完會印出</span><br><span class="line">// 0 =&gt; 1</span><br><span class="line">// 1 =&gt; 2</span><br><span class="line">// 2 =&gt; 3</span><br></pre></td></tr></table></figure></p>
+<p>介紹完迴圈的種類之後，要再順便介紹 2 個和迴圈相關的關鍵字</p>
+<ol>
+<li>break</li>
+<li>continue</li>
+</ol>
+<p>##1. break<br>當使用 break 關鍵字時，可以從 loop 或是 switch (後面會介紹) 中跳出，中斷執行。<br>而使用 break 是預設跳出一層迴圈，可以在後面接上數字，代表要跳出的層數。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$num = 1;</span><br><span class="line"></span><br><span class="line">while($num &lt; 5)&#123;</span><br><span class="line">	if($num &gt; 3)</span><br><span class="line">		break;</span><br><span class="line">	echo $num++;</span><br><span class="line">&#125;</span><br><span class="line">// 執行完會印出 123</span><br></pre></td></tr></table></figure></p>
+<p>##2. continue<br>同樣也是使用在迴圈中，不過和 break 不同的是 continue 並不會完全跳出迴圈，<br>而是只會跳過符合條件的元素，也因此迴圈仍然會繼續執行到結束。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$num = 1;</span><br><span class="line"></span><br><span class="line">while($num &lt; 5)&#123;</span><br><span class="line">	if($num++ == 3)</span><br><span class="line">		continue;</span><br><span class="line">	echo $num;</span><br><span class="line">&#125;</span><br><span class="line">// 執行完會印出 235</span><br></pre></td></tr></table></figure></p>
+<h2 id="switch-case"><a href="#switch-case" class="headerlink" title="switch case"></a>switch case</h2><p>這部分要提到 switch case<br>switch case 和 if elseif… 結構和用途非常相似<br>可以使用 case 接上數值，當數值匹配到的時候，就會執行該 case 項目<br>另外也可以使用 default，若沒有任何匹配的數值時，就會執行該項目</p>
+<p>有 1 點要特別注意!<br>倘若 case 的區塊裡沒有使用 break 跳脫語句的話，那麼就會繼續往下個 case 執行完同樣會印出<br>因此就可能會發生將每個 case 都執行完的狀況，這點要謹記!</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">$num = 1;</span><br><span class="line"></span><br><span class="line">switch($num)&#123;</span><br><span class="line">	case 0:</span><br><span class="line">		echo &quot;0&quot;;</span><br><span class="line">		break;</span><br><span class="line">	case 1:</span><br><span class="line">		echo &quot;1&quot;;</span><br><span class="line">		break;</span><br><span class="line">	case 2:</span><br><span class="line">		echo &quot;2&quot;;</span><br><span class="line">		break;</span><br><span class="line">&#125;</span><br><span class="line">// 執行完會印出 &quot;1&quot;</span><br></pre></td></tr></table></figure>
+<p>同樣也可以改以 switch endswitch 當作程式碼範圍，這裡就不再多做示範了~</p>
+<h2 id="Return"><a href="#Return" class="headerlink" title="Return"></a>Return</h2><p>接下來要提到 return 這個關鍵字的用法<br>它可以用來回傳數值，當用在函式裡面的時候，可以將函式計算完的結果回傳，以此減輕主程式的大小<br>而當 return 使用在全域範圍的情況下，就會直接中斷執行 PHP 程式。</p>
+<p>另外要注意的是 return 也可以不返回任何數值，那就單純只會中斷程式碼的執行而以~</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">echo &quot;one&quot;;</span><br><span class="line">return;</span><br><span class="line">echo &quot;two&quot;;</span><br><span class="line">// 執行完會印出 &apos;one&apos;</span><br></pre></td></tr></table></figure>
+<h2 id="Add-reference-of-PHP-file"><a href="#Add-reference-of-PHP-file" class="headerlink" title="Add reference of PHP file"></a>Add reference of PHP file</h2><p>這裡要介紹如何將 PHP 檔案從外部參考引入。<br>通常因為要避免檔案過大或是過於雜亂，所以會盡量將不同用途的程式碼拆分成各個 PHP 檔案<br>再用加入參考的方式去使用每個 PHP 檔案中定義的變數、常數或函式<br>如此一來就可以方便維護程式碼，在閱讀上也更加容易!</p>
+<p>而引入外部檔案參考的方式分為以下 4 種：</p>
+<ol>
+<li>require</li>
+<li>require_once</li>
+<li>include</li>
+<li>include_once</li>
+</ol>
+<h2 id="1-require"><a href="#1-require" class="headerlink" title="1. require"></a>1. require</h2><p>當使用 require 引入外部 PHP 檔案時<br>如果 PHP 沒辦法找到指定檔案的話，就會產生 E_COMPILE_ERROR 錯誤，並且中斷 PHP 程式碼的執行</p>
+<p>引入檔案的方式可以使用括號包住、也可以單純接在 require 關鍵字後面<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">require(&quot;test.php&quot;);</span><br><span class="line"></span><br><span class="line">require &quot;test.php&quot;;</span><br></pre></td></tr></table></figure></p>
+<h2 id="2-require-once"><a href="#2-require-once" class="headerlink" title="2. require_once"></a>2. require_once</h2><p>而 require_once 和 require 的效果是一樣的，當無法順利找到檔案時，就會中斷 PHP 腳本的執行<br>而這兩者的差異在於，當使用 require_once 的時候<br>PHP 會去檢查要參考的檔案是否已經有被參考了，如果已經被參考，那就不在將檔案引入一次<br>這樣就可以避免相同檔案被多次引入參考的問題~</p>
+<h2 id="3-include"><a href="#3-include" class="headerlink" title="3. include"></a>3. include</h2><p>另一種引入參考的方式就是使用 include<br>include 和 require 的差別在於，當使用 include 來參考外部檔案時<br>如果 PHP 沒辦法順利找到檔案，只會發出警告，不會中斷 PHP 腳本的執行</p>
+<p>不過這樣問題就可能會發生在後續的程式碼，若後續有使用到外部引入的資料時<br>就可能會因為找不到而取用失敗~<br>因此建議還是使用 require 或 require_once 為主!</p>
+<p><strong>另外在使用 include 的時候，會根據是否成功引入檔案回傳布林值，可以使用這種方式去加以判斷該不該繼續執行 PHP 腳本~</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php // test.php</span><br><span class="line">	$color = &quot;red&quot;;</span><br><span class="line">?&gt;</span><br><span class="line"></span><br><span class="line">&lt;?php</span><br><span class="line">	include &apos;test.php&apos;;</span><br><span class="line">	echo $color;</span><br><span class="line">	// 結果會印出 &apos;red&apos;</span><br><span class="line">?&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="4-include-once"><a href="#4-include-once" class="headerlink" title="4. include_once"></a>4. include_once</h2><p>和 require_once 一樣，在引入檔案參考時，會先檢查檔案是否已經被參考過<br>如果有被參考，則不再將檔案引入參考。</p>
+<h2 id="goto"><a href="#goto" class="headerlink" title="goto"></a>goto</h2><p>最後要介紹 goto 語句的用法<br>當使用 goto 語句時，可以跳到某個事先定義好的程式碼區塊。</p>
+<p>而程式碼區塊定義的方式是 <strong>特定名稱</strong> 加上 <strong>: (冒號)</strong><br>例如: start: , end:</p>
+<p>而跳轉的方式是 <strong>goto</strong> 加上 <strong>程式碼區塊的名稱</strong><br>例如: goto start; goto end;</p>
+<p><strong>不過一般的情況下並不會太常使用 goto 語句，避免程式碼過於混亂，可以使用其他的語句達到相同的效果</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">$num = 0;</span><br><span class="line">while($num &lt; 10)&#123;</span><br><span class="line">	if($num == 1)</span><br><span class="line">		 goto endLoop;</span><br><span class="line">	echo $num++ . &quot;&lt;br&gt;&quot;;</span><br><span class="line">&#125;</span><br><span class="line">endLoop:</span><br><span class="line">	echo &quot;finished!&lt;br&gt;&quot;;</span><br><span class="line">// 執行完會印出</span><br><span class="line">// 0</span><br><span class="line">// finished!</span><br></pre></td></tr></table></figure></p>
 
-        <div class="article-info info-on-right">
-          
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -181,247 +263,106 @@
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/10/17/php-Control_Structure/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/10/03/php-Operators/" class="archive-article-date">
-  	<time datetime="2018-10-02T16:15:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-03</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2018/10/03/php-Operators/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">php-Operators</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/10/03/php-Operators/">php-Operators</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">php</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/09/19/php-Expressions/" class="archive-article-date">
-  	<time datetime="2018-09-19T14:58:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-19</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/09/19/php-Expressions/">php-Expressions</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">php</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/09/17/php-Constants/" class="archive-article-date">
-  	<time datetime="2018-09-17T13:43:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-17</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/09/17/php-Constants/">php-Constants</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">php</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/09/17/php-Variables/" class="archive-article-date">
-  	<time datetime="2018-09-16T16:33:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-17</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/09/17/php-Variables/">php-Variables</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">php</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/09/13/php-Types/" class="archive-article-date">
-  	<time datetime="2018-09-13T14:24:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-13</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/09/13/php-Types/">php-Types</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">php</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/09/10/php/" class="archive-article-date">
-  	<time datetime="2018-09-10T13:26:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-10</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/09/10/php/">php</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">php</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -444,9 +385,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
