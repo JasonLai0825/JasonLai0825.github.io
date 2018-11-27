@@ -6,15 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives | JasonLai&#39;s blog</title>
+  <title>php-Functions | JasonLai&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="JasonLai&#39;s blog">
-<meta property="og:url" content="http://yoursite.com/archives/index.html">
+  <meta name="description" content="這部分要談到的是 PHP 的函式我會分成 6 的小節來介紹~  自定義函式 參數 回傳值 變數函式 內建函式 匿名函式">
+<meta name="keywords" content="php">
+<meta property="og:type" content="article">
+<meta property="og:title" content="php-Functions">
+<meta property="og:url" content="http://yoursite.com/2018/11/27/php-Functions/index.html">
 <meta property="og:site_name" content="JasonLai&#39;s blog">
+<meta property="og:description" content="這部分要談到的是 PHP 的函式我會分成 6 的小節來介紹~  自定義函式 參數 回傳值 變數函式 內建函式 匿名函式">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-11-27T15:21:00.836Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JasonLai&#39;s blog">
+<meta name="twitter:title" content="php-Functions">
+<meta name="twitter:description" content="這部分要談到的是 PHP 的函式我會分成 6 的小節來介紹~  自定義函式 參數 回傳值 變數函式 內建函式 匿名函式">
   
     <link rel="alternative" href="/atom.xml" title="JasonLai&#39;s blog" type="application/atom+xml">
   
@@ -140,36 +145,78 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-php-Functions" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      php-Functions
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/11/27/php-Functions/" class="archive-article-date">
+
+        
+        <a href="/2018/11/27/php-Functions/" class="archive-article-date">
   	<time datetime="2018-11-27T15:21:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-27</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/11/27/php-Functions/">php-Functions</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>這部分要談到的是 PHP 的函式<br>我會分成 6 的小節來介紹~</p>
+<ol>
+<li>自定義函式</li>
+<li>參數</li>
+<li>回傳值</li>
+<li>變數函式</li>
+<li>內建函式</li>
+<li>匿名函式</li>
+</ol>
+<a id="more"></a>
+<h2 id="自定義函式"><a href="#自定義函式" class="headerlink" title="自定義函式"></a>自定義函式</h2><p>最常用的大概就是自定義函式了<br>我們可以使用 <strong>function</strong> 這個關鍵字去定義一個函式<br>特別要注意的是!!!<br>只要在 PHP 的範圍裡面有定義的函式，都可以呼叫<br>沒有一定要前面先定義好，才可以在後面呼叫，反過來先呼叫再定義也是可以正常執行的!</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">function callOne()&#123;</span><br><span class="line">	echo &quot;one&quot;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">callOne();</span><br><span class="line">callTwo();</span><br><span class="line"></span><br><span class="line">function callTwo()&#123;</span><br><span class="line">	echo &quot;two&quot;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 結果會印出 onetwo</span><br></pre></td></tr></table></figure>
+<h2 id="參數"><a href="#參數" class="headerlink" title="參數"></a>參數</h2><p>在呼叫函式的時候，也可以從函式外傳遞參數到函式裡面執行<br>而可以細分為3個部分，分別是</p>
+<ol>
+<li>傳值</li>
+<li>傳參考</li>
+<li>預設值</li>
+</ol>
+<p><strong> PHP 是沒有指標的喔~ 所以只有傳值和傳參考的方式! </strong></p>
+<h2 id="1-傳值"><a href="#1-傳值" class="headerlink" title="1. 傳值"></a>1. 傳值</h2><p>傳值的方式顧名思義就是將數值傳遞進去<br>所以會將原先的變數複製一份當作參數傳遞到函式中<br>在函式裡面做的任何修改都不會影響到原來的數值</p>
+<p><strong>這當然是有前提的!</strong><br>並不是所有用傳值方式傳遞的參數，在經過修改後都不會影響到原數值! (馬上打臉自己…)<br>因為雖然變數都有各自分配的記憶體空間，但不是每一個都直接到記憶體空間取值~<br>像是物件，PHP 會使用一個辨識碼，辨識碼可以辨識物件的記憶體位置<br>像在這種情況下進行複製時，複製的是那個辨識碼，所以說實際上還是只有一個記憶體空間~<br>所以修改的時候，還是會影響到原本的數值~ </p>
+<p>有點抽象 (汗…)，還是趕緊來看下面的範例吧~</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">function call_value($var)&#123;</span><br><span class="line">	echo ++$var;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">$var = 1;</span><br><span class="line">call_value($var); // 結果會印出 2</span><br><span class="line">echo $var; // 結果會印出 1</span><br></pre></td></tr></table></figure>
+<h2 id="2-傳參考"><a href="#2-傳參考" class="headerlink" title="2. 傳參考"></a>2. 傳參考</h2><p>傳參考和傳值不同的地方在於…<br><strong>兩者都是相同的記憶體位置，所以當參數被修改時，原變數的數值也會被更動</strong><br>而使用的方式是用一個 <strong>&amp; (取址符號)</strong> 接在參數的前面<br>另外像前面提過的…<br>有些變數可以在不使用取址符號的情況下達到傳參考的方式<br>但在一般使用的時候，還是加上符號會比較好，避免使用上的混淆~</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">function call_value(&amp;$var)&#123;</span><br><span class="line">	echo ++$var;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">$var = 1;</span><br><span class="line">call_value($var); // 結果會印出 2</span><br><span class="line">echo $var; // 結果會印出 2</span><br></pre></td></tr></table></figure>
+<h2 id="3-預設值"><a href="#3-預設值" class="headerlink" title="3. 預設值"></a>3. 預設值</h2><p>在指定函式參數的時候，可以指派預設值給參數<br><strong>而在呼叫有預設值參數的函式時，我們可以不傳遞該參數給函式</strong><br>函式會使用預設值來執行內部的程式碼<br>換句話說，如果我們有傳遞參數給函式的話，函式就會使用我們傳遞的參數去執行內部程式碼~</p>
+<p>特別要注意的是!!!<br>從指派預設值的參數開始，後面每個都必須有預設值，在呼叫函式時才不會發生錯誤~</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">function compare($target, $param)&#123;</span><br><span class="line">	echo ($target &gt; $param) ? (&quot;less or equal than target&quot;) : (&quot;more than target&quot;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">$target = 5;</span><br><span class="line">$param = 1;</span><br><span class="line">compare($target, $param); // 結果會印出 &quot;less or equal than target&quot;</span><br></pre></td></tr></table></figure>
+<h2 id="回傳值"><a href="#回傳值" class="headerlink" title="回傳值"></a>回傳值</h2><p>在前面的章節曾經提過 <strong>return</strong> 這個關鍵字<br>簡單來說，return 不僅可以中斷整個 PHP 腳本的執行，當用在函式裡面的時候，也可以用來回傳某一個數值 (當然也可以什麼都不回傳)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">function getSquareValue($var)&#123;</span><br><span class="line">	return $var * $var;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">$var = 3;</span><br><span class="line">echo getSquareValue($var); // 結果會印出 9</span><br></pre></td></tr></table></figure>
+<p>另外~<br>雖然 PHP 可以不需要事前指定變數或回傳的型態<br>不過在函式中，你仍然可以指定函式回傳值的型態<br>當回傳值的型態不符合指定時，就會發生錯誤<br>而指定的方法就是在包函參數的中括號後面接上一個<strong>冒號 + 指定的型態</strong><br>可以參考下方範例~</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">function getSquareValue($var):string&#123;</span><br><span class="line">	return $var * $var;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">$var = 3;</span><br><span class="line">echo getSquareValue($var); // 結果會發生錯誤</span><br></pre></td></tr></table></figure>
+<h2 id="變數函式"><a href="#變數函式" class="headerlink" title="變數函式"></a>變數函式</h2><p>關於變數韓式的這個部分，我認為是 PHP 當中一個很好玩的特性~<br>當在某個變數的後面加上表是函式的 <strong>()</strong> 中括號之後<br>PHP 會去尋找是否有符合變數數值的函式，並試圖執行它<br>特別要注意!<br><strong>這不適用於每個函式，像是 echo、print、require、include…這一類的都不適用</strong><br><strong>所以如果真的要使用的話，我認為用在自定義的函式上是比較恰當的~</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">function test()&#123;</span><br><span class="line">	echo &quot;It&apos;s a test function.&quot;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">$var = &apos;test&apos;;</span><br><span class="line">$var(); // 結果會印出 &quot;It&apos;s a test function.&quot;</span><br></pre></td></tr></table></figure>
+<h2 id="內建函式"><a href="#內建函式" class="headerlink" title="內建函式"></a>內建函式</h2><p>顧名思義就是本來就存在 PHP 當中的函式<br>因此不需要另外在定義就可以直接呼叫使用<br>不過換句話說<br>傳遞的參數也必需要符合定義才行，不然就會回傳 undefined 的錯誤~<br>像是..<br>可以使用 mysqli_connect() 來連結 mysql 資料庫.. 等等</p>
+<h2 id="匿名函式"><a href="#匿名函式" class="headerlink" title="匿名函式"></a>匿名函式</h2><p>最後則是要提到匿名函式的部分~<br>在前面的範例中可以看到，不管是自定義還是內建的函式都會帶有一個名稱<br>而我們可以使用名稱去呼叫對應的函式</p>
+<p>而這個章節就是要說，其實我們也可以定義一個沒有名稱的函式~<br>常見的有兩種</p>
+<ol>
+<li>建立一個匿名的函式，然後把它當成參數傳遞到某個函式裡</li>
+<li>將某個匿名的函式丟給一個變數，這時候變數就會等於匿名函式</li>
+</ol>
+<p>聽起來有點饒舌<br>所以直接來看看下面的範例說明吧!</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$func = function($name = &apos;Jason&apos;)&#123;</span><br><span class="line">	$echo $name;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">$name = &apos;Bob&apos;;</span><br><span class="line">$func(); // 結果會印出 &apos;Jason&apos;</span><br><span class="line">$func($name); // 結果會印出 &apos;Bob&apos;</span><br></pre></td></tr></table></figure>
+<p><strong>特別要注意，將匿名函式指派給變數之後，不要忘記加上;(分號)~</strong></p>
 
-        <div class="article-info info-on-right">
-          
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -181,285 +228,106 @@
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/11/27/php-Functions/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/10/17/php-Control_Structure/" class="archive-article-date">
-  	<time datetime="2018-10-17T14:32:48.974Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-17</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2018/10/17/php-Control_Structure/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">PHP-Control Structure</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/10/17/php-Control_Structure/">PHP-Control Structure</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">php</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/10/03/php-Operators/" class="archive-article-date">
-  	<time datetime="2018-10-02T16:15:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-03</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/10/03/php-Operators/">php-Operators</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">php</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/09/19/php-Expressions/" class="archive-article-date">
-  	<time datetime="2018-09-19T14:58:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-19</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/09/19/php-Expressions/">php-Expressions</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">php</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/09/17/php-Constants/" class="archive-article-date">
-  	<time datetime="2018-09-17T13:43:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-17</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/09/17/php-Constants/">php-Constants</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">php</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/09/17/php-Variables/" class="archive-article-date">
-  	<time datetime="2018-09-16T16:33:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-17</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/09/17/php-Variables/">php-Variables</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">php</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/09/13/php-Types/" class="archive-article-date">
-  	<time datetime="2018-09-13T14:24:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-13</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/09/13/php-Types/">php-Types</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">php</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/09/10/php/" class="archive-article-date">
-  	<time datetime="2018-09-10T13:26:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-10</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/09/10/php/">php</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">php</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -482,8 +350,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
