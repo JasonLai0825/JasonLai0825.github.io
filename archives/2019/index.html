@@ -6,20 +6,15 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>php-Constants | JasonLai&#39;s blog</title>
+  <title>Archives: 2019 | JasonLai&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="這章主要介紹 PHP 的常數。常數的意思就是數值不會被改變的常量；和常數相反的就是變數，就是指可以被改變的變量。常數名稱的命名規則和變數相同，一樣不可以使用數字和特別符號當做名稱的開頭 而更詳細的內容會分成2個部分來介紹：  syntax magic contants">
-<meta name="keywords" content="php">
-<meta property="og:type" content="article">
-<meta property="og:title" content="php-Constants">
-<meta property="og:url" content="http://yoursite.com/2018/09/17/php-Constants/index.html">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="JasonLai&#39;s blog">
+<meta property="og:url" content="http://yoursite.com/archives/2019/index.html">
 <meta property="og:site_name" content="JasonLai&#39;s blog">
-<meta property="og:description" content="這章主要介紹 PHP 的常數。常數的意思就是數值不會被改變的常量；和常數相反的就是變數，就是指可以被改變的變量。常數名稱的命名規則和變數相同，一樣不可以使用數字和特別符號當做名稱的開頭 而更詳細的內容會分成2個部分來介紹：  syntax magic contants">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-09-17T13:50:37.404Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="php-Constants">
-<meta name="twitter:description" content="這章主要介紹 PHP 的常數。常數的意思就是數值不會被改變的常量；和常數相反的就是變數，就是指可以被改變的變量。常數名稱的命名規則和變數相同，一樣不可以使用數字和特別符號當做名稱的開頭 而更詳細的內容會分成2個部分來介紹：  syntax magic contants">
+<meta name="twitter:title" content="JasonLai&#39;s blog">
   
     <link rel="alternative" href="/atom.xml" title="JasonLai&#39;s blog" type="application/atom+xml">
   
@@ -145,67 +140,36 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-php-Constants" class="article article-type-post " itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
+            
   
-    <h1 class="article-title" itemprop="name">
-      php-Constants
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2019" class="archive-year">2019</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2019/01/04/php-Classes-and-objects-1/" class="archive-article-date">
+  	<time datetime="2019-01-04T13:19:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-04</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2019/01/04/php-Classes-and-objects-1/">php-Classes and objects (上)</a>
     </h1>
   
 
-        
-        <a href="/2018/09/17/php-Constants/" class="archive-article-date">
-  	<time datetime="2018-09-17T13:43:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-17</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>這章主要介紹 PHP 的常數。<br>常數的意思就是<strong>數值不會被改變</strong>的常量；和常數相反的就是變數，就是指可以被改變的變量。<br><em>常數名稱的命名規則和變數相同，一樣不可以使用數字和特別符號當做名稱的開頭</em></p>
-<p>而更詳細的內容會分成2個部分來介紹：</p>
-<ol>
-<li>syntax</li>
-<li>magic contants</li>
-</ol>
-<a id="more"></a>
-<h2 id="syntax"><a href="#syntax" class="headerlink" title="syntax"></a>syntax</h2><p>這部分會介紹宣告 PHP 常數的語法。<br>宣告的語法主要有2種，分別是</p>
-<ol>
-<li>define() 函式</li>
-<li>const 關鍵字<br>緊接著就來看實際應用的方法~</li>
-</ol>
-<p><strong>1. define()</strong><br>define 方法主要有3個參數，由左到右分別是<br><strong>name:</strong><br>代表常數的名稱。<br><strong>value:</strong><br>代表常數儲存的數值，數值可以是 integer, float, string, boolean, null 型態 (PHP 7中，還可以儲存陣列型態)。<br><strong>case_insensitive:</strong><br>儲存布林值，代表這個常數會不會區分大小寫。若為 true，則常數 NAME 和常數 name 是相同的。(預設為 false)<br>在來看看實際的例子：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">define(&apos;Name&apos;, &apos;Jason&apos;, true);</span><br><span class="line">define(&apos;age&apos;, 30);</span><br><span class="line"></span><br><span class="line">echo NAME; // 結果會印出 &apos;Jason&apos;</span><br><span class="line">echo age; // 結果會印出 30</span><br><span class="line">echo AGE; // 結果會印出 AGE，因為沒有 AGE 這個常數，所以就被當成一般文字印出來</span><br></pre></td></tr></table></figure>
-<p><strong>2. const</strong><br>和 define 函式不同， const 是一個關鍵字而不是一個函式。<br>相較於 define() ，我個人感覺使用 const 關鍵字會更加直覺一點~<br><strong>但是使用 const 宣告常數的時候，常數是不會區分大小寫的</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">const Name = &apos;Jason&apos;;</span><br><span class="line">const age = 30;</span><br><span class="line"></span><br><span class="line">echo Name; // 結果會印出 &apos;Jason&apos;</span><br><span class="line">echo age; // 結果會印出 30</span><br><span class="line">echo NAME; // 結果會印出 NAME，被當成一般文字印出</span><br></pre></td></tr></table></figure>
-<p><strong>補充</strong><br>1.在 PHP 5.6.0 之後，常數的數值可以做加乘的動作</p>
-<p>1.字串的加乘<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">const firstName = &apos;Jason&apos;;</span><br><span class="line">const lastName = &apos;Lai&apos;;</span><br><span class="line">const fullName = firstName . &apos; &apos; . lastName;</span><br><span class="line"></span><br><span class="line">echo fullName; // 結果會印出 &apos;Jason Lai&apos;</span><br></pre></td></tr></table></figure></p>
-<p>2.數字的加乘<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">const baseNum = 10;</span><br><span class="line">const time = 2;</span><br><span class="line">const totalValue = baseNum * time;</span><br><span class="line"></span><br><span class="line">echo totalValue; // 結果會印出 20</span><br></pre></td></tr></table></figure></p>
-<h2 id="magic-contants"><a href="#magic-contants" class="headerlink" title="magic contants"></a>magic contants</h2><p>PHP 除了有預先定義好的變數之外，也有提供預先定義好的常數，這些常數就叫做 magic constants。<br>同樣的，在不同的延伸函式庫中會包含不同的魔術常數，需要引用對應的延伸函式庫才能使用這些常數。</p>
-<p>而前面提到常數被定義好之後是不能被更改數值的，下面會列出一些會隨著環境變化而改變數值的魔術常數：</p>
-<ol>
-<li><strong>LINE</strong>:<br>當前檔案的行數。</li>
-<li><strong>FILE</strong>:<br>完整的檔案名稱和路徑。</li>
-<li><strong>DIR</strong>:<br>檔案的資料夾名稱。</li>
-<li><strong>FUNCTION</strong>:<br>方法名稱。</li>
-<li><strong>CLASS</strong>:<br>類別的名稱。</li>
-<li><strong>TRAIT</strong>:<br>Trait 的名稱(包含命名空間和它被宣告的區域)。</li>
-<li><strong>METHOD</strong>:<br>類別中方法的名稱。</li>
-<li><strong>NAMESPACE</strong>:<br>當前命名空間的名稱。</li>
-<li>ClassName::class:<br>類別名稱解析。</li>
-</ol>
-<p>透過這些魔術常數可以幫助我們更快取得我們需要的資訊。<br>而其中某些沒看過得新名詞會在後續的章節介紹~</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
+        <div class="article-info info-on-right">
+          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -217,115 +181,19 @@
 		</ul>
 	</div>
 
-      
+          
 
-      
-
-      
-        
-<div class="share-btn share-icons tooltip-left">
-  <div class="tooltip tooltip-east">
-    <span class="tooltip-item">
-      <a href="javascript:;" class="share-sns share-outer">
-        <i class="icon icon-share"></i>
-      </a>
-    </span>
-    <span class="tooltip-content">
-      <div class="share-wrap">
-        <div class="share-icons">
-          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
-            <i class="icon icon-weibo"></i>
-          </a>
-          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
-            <i class="icon icon-weixin"></i>
-          </a>
-          <a class="qq share-sns" href="javascript:;" data-type="qq">
-            <i class="icon icon-qq"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" data-type="douban">
-            <i class="icon icon-douban"></i>
-          </a>
-          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a>
-          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
-            <i class="icon icon-facebook"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
-            <i class="icon icon-twitter"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" data-type="google">
-            <i class="icon icon-google"></i>
-          </a>
         </div>
-      </div>
-    </span>
-  </div>
-</div>
-
-<div class="page-modal wx-share js-wx-box">
-    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/09/17/php-Constants/" alt="微信分享二维码">
-    </div>
-</div>
-
-<div class="mask js-mask"></div>
-      
-      <div class="clearfix"></div>
-    </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-  
-<nav id="article-nav">
-  
-    <a href="/2018/09/19/php-Expressions/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          php-Expressions
-        
-      </div>
-    </a>
   
   
-    <a href="/2018/09/17/php-Variables/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">php-Variables</div>
-      <i class="icon-circle-right"></i>
-    </a>
-  
-</nav>
-
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-  
-  
+    </div></section>
   
 
-  
-
-  
-
-  
+    
 
 
           </div>
@@ -348,8 +216,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: true,
-		isArchive: false,
+		isPost: false,
+		isArchive: true,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

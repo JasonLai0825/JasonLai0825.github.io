@@ -6,20 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>php-Constants | JasonLai&#39;s blog</title>
+  <title>php-Classes and objects (上) | JasonLai&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="這章主要介紹 PHP 的常數。常數的意思就是數值不會被改變的常量；和常數相反的就是變數，就是指可以被改變的變量。常數名稱的命名規則和變數相同，一樣不可以使用數字和特別符號當做名稱的開頭 而更詳細的內容會分成2個部分來介紹：  syntax magic contants">
+  <meta name="description" content="終於到了介紹物件的章節了~這張的內容會稍微有點多，所以我拆分成上、下兩個部分來介紹!上半部分會介紹  基本介紹 自動載入 建構元/解構元 繼承 範疇解析運算符號 static 和 final 關鍵字 抽象類別 介面 匿名類別  那我們就馬上開始吧!">
 <meta name="keywords" content="php">
 <meta property="og:type" content="article">
-<meta property="og:title" content="php-Constants">
-<meta property="og:url" content="http://yoursite.com/2018/09/17/php-Constants/index.html">
+<meta property="og:title" content="php-Classes and objects (上)">
+<meta property="og:url" content="http://yoursite.com/2019/01/04/php-Classes-and-objects-1/index.html">
 <meta property="og:site_name" content="JasonLai&#39;s blog">
-<meta property="og:description" content="這章主要介紹 PHP 的常數。常數的意思就是數值不會被改變的常量；和常數相反的就是變數，就是指可以被改變的變量。常數名稱的命名規則和變數相同，一樣不可以使用數字和特別符號當做名稱的開頭 而更詳細的內容會分成2個部分來介紹：  syntax magic contants">
+<meta property="og:description" content="終於到了介紹物件的章節了~這張的內容會稍微有點多，所以我拆分成上、下兩個部分來介紹!上半部分會介紹  基本介紹 自動載入 建構元/解構元 繼承 範疇解析運算符號 static 和 final 關鍵字 抽象類別 介面 匿名類別  那我們就馬上開始吧!">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-09-17T13:50:37.404Z">
+<meta property="og:updated_time" content="2019-01-04T13:19:50.691Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="php-Constants">
-<meta name="twitter:description" content="這章主要介紹 PHP 的常數。常數的意思就是數值不會被改變的常量；和常數相反的就是變數，就是指可以被改變的變量。常數名稱的命名規則和變數相同，一樣不可以使用數字和特別符號當做名稱的開頭 而更詳細的內容會分成2個部分來介紹：  syntax magic contants">
+<meta name="twitter:title" content="php-Classes and objects (上)">
+<meta name="twitter:description" content="終於到了介紹物件的章節了~這張的內容會稍微有點多，所以我拆分成上、下兩個部分來介紹!上半部分會介紹  基本介紹 自動載入 建構元/解構元 繼承 範疇解析運算符號 static 和 final 關鍵字 抽象類別 介面 匿名類別  那我們就馬上開始吧!">
   
     <link rel="alternative" href="/atom.xml" title="JasonLai&#39;s blog" type="application/atom+xml">
   
@@ -145,59 +145,154 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-php-Constants" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-php-Classes-and-objects-1" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      php-Constants
+      php-Classes and objects (上)
     </h1>
   
 
         
-        <a href="/2018/09/17/php-Constants/" class="archive-article-date">
-  	<time datetime="2018-09-17T13:43:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-17</time>
+        <a href="/2019/01/04/php-Classes-and-objects-1/" class="archive-article-date">
+  	<time datetime="2019-01-04T13:19:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-04</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>這章主要介紹 PHP 的常數。<br>常數的意思就是<strong>數值不會被改變</strong>的常量；和常數相反的就是變數，就是指可以被改變的變量。<br><em>常數名稱的命名規則和變數相同，一樣不可以使用數字和特別符號當做名稱的開頭</em></p>
-<p>而更詳細的內容會分成2個部分來介紹：</p>
+        <p>終於到了介紹物件的章節了~<br>這張的內容會稍微有點多，所以我拆分成上、下兩個部分來介紹!<br>上半部分會介紹</p>
 <ol>
-<li>syntax</li>
-<li>magic contants</li>
+<li>基本介紹</li>
+<li>自動載入</li>
+<li>建構元/解構元</li>
+<li>繼承</li>
+<li>範疇解析運算符號</li>
+<li>static 和 final 關鍵字</li>
+<li>抽象類別</li>
+<li>介面</li>
+<li>匿名類別</li>
 </ol>
-<a id="more"></a>
-<h2 id="syntax"><a href="#syntax" class="headerlink" title="syntax"></a>syntax</h2><p>這部分會介紹宣告 PHP 常數的語法。<br>宣告的語法主要有2種，分別是</p>
+<p>那我們就馬上開始吧!<br><a id="more"></a></p>
+<h2 id="1-基本介紹"><a href="#1-基本介紹" class="headerlink" title="1. 基本介紹"></a>1. 基本介紹</h2><p>一個類別最主要由以下3種元素組成</p>
 <ol>
-<li>define() 函式</li>
-<li>const 關鍵字<br>緊接著就來看實際應用的方法~</li>
+<li>屬性、方法</li>
+<li>常數</li>
+<li>存取權限</li>
 </ol>
-<p><strong>1. define()</strong><br>define 方法主要有3個參數，由左到右分別是<br><strong>name:</strong><br>代表常數的名稱。<br><strong>value:</strong><br>代表常數儲存的數值，數值可以是 integer, float, string, boolean, null 型態 (PHP 7中，還可以儲存陣列型態)。<br><strong>case_insensitive:</strong><br>儲存布林值，代表這個常數會不會區分大小寫。若為 true，則常數 NAME 和常數 name 是相同的。(預設為 false)<br>在來看看實際的例子：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">define(&apos;Name&apos;, &apos;Jason&apos;, true);</span><br><span class="line">define(&apos;age&apos;, 30);</span><br><span class="line"></span><br><span class="line">echo NAME; // 結果會印出 &apos;Jason&apos;</span><br><span class="line">echo age; // 結果會印出 30</span><br><span class="line">echo AGE; // 結果會印出 AGE，因為沒有 AGE 這個常數，所以就被當成一般文字印出來</span><br></pre></td></tr></table></figure>
-<p><strong>2. const</strong><br>和 define 函式不同， const 是一個關鍵字而不是一個函式。<br>相較於 define() ，我個人感覺使用 const 關鍵字會更加直覺一點~<br><strong>但是使用 const 宣告常數的時候，常數是不會區分大小寫的</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">const Name = &apos;Jason&apos;;</span><br><span class="line">const age = 30;</span><br><span class="line"></span><br><span class="line">echo Name; // 結果會印出 &apos;Jason&apos;</span><br><span class="line">echo age; // 結果會印出 30</span><br><span class="line">echo NAME; // 結果會印出 NAME，被當成一般文字印出</span><br></pre></td></tr></table></figure>
-<p><strong>補充</strong><br>1.在 PHP 5.6.0 之後，常數的數值可以做加乘的動作</p>
-<p>1.字串的加乘<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">const firstName = &apos;Jason&apos;;</span><br><span class="line">const lastName = &apos;Lai&apos;;</span><br><span class="line">const fullName = firstName . &apos; &apos; . lastName;</span><br><span class="line"></span><br><span class="line">echo fullName; // 結果會印出 &apos;Jason Lai&apos;</span><br></pre></td></tr></table></figure></p>
-<p>2.數字的加乘<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">const baseNum = 10;</span><br><span class="line">const time = 2;</span><br><span class="line">const totalValue = baseNum * time;</span><br><span class="line"></span><br><span class="line">echo totalValue; // 結果會印出 20</span><br></pre></td></tr></table></figure></p>
-<h2 id="magic-contants"><a href="#magic-contants" class="headerlink" title="magic contants"></a>magic contants</h2><p>PHP 除了有預先定義好的變數之外，也有提供預先定義好的常數，這些常數就叫做 magic constants。<br>同樣的，在不同的延伸函式庫中會包含不同的魔術常數，需要引用對應的延伸函式庫才能使用這些常數。</p>
-<p>而前面提到常數被定義好之後是不能被更改數值的，下面會列出一些會隨著環境變化而改變數值的魔術常數：</p>
+<p>底下分別做更詳細的介紹</p>
+<p><strong> 1. 屬性、方法 </strong><br>存在於類別裡面的變數就稱作<strong>屬性</strong>，也可以叫做<strong>成員變數</strong><br>而存在於類別裡面的函式就稱為<strong>方法</strong></p>
+<p><strong>不過宣告變數的方式稍微有些不太一樣</strong><br>在宣告變數的前面必需要加上修飾關鍵字<br>像是 public、protected 或是 private (這部分請看下方存取權限的介紹~)<br>另外還有 var<br>使用 var 的效果和 public 相同，不過在 PHP 5.3 的版本後被棄用了，所以並不建議使用 var 來宣告變數!!!</p>
+<p><strong> 2. 常數 </strong><br>在類別當中也可以宣告常數<br>不過僅限定於使用 const 這個關鍵字來宣告~<br>而宣告常數的時候，可以忽略存取權限的修飾詞，效果會和使用 public 相同~<br>不過一般還是建議加上存取權限修飾詞比較好~</p>
+<p><strong> 3. 存取權限 </strong><br>存取權限有分為 3 種</p>
 <ol>
-<li><strong>LINE</strong>:<br>當前檔案的行數。</li>
-<li><strong>FILE</strong>:<br>完整的檔案名稱和路徑。</li>
-<li><strong>DIR</strong>:<br>檔案的資料夾名稱。</li>
-<li><strong>FUNCTION</strong>:<br>方法名稱。</li>
-<li><strong>CLASS</strong>:<br>類別的名稱。</li>
-<li><strong>TRAIT</strong>:<br>Trait 的名稱(包含命名空間和它被宣告的區域)。</li>
-<li><strong>METHOD</strong>:<br>類別中方法的名稱。</li>
-<li><strong>NAMESPACE</strong>:<br>當前命名空間的名稱。</li>
-<li>ClassName::class:<br>類別名稱解析。</li>
+<li>public<br>表示公開的權限，可以直接從外部取得或是呼叫<br>這也同時代表著一個類別和外部溝通的平台<br>因為類別具有封裝性的原則，一般建議減少 public 的存取權限<br>僅僅保持最低限度的對外開放即可</li>
 </ol>
-<p>透過這些魔術常數可以幫助我們更快取得我們需要的資訊。<br>而其中某些沒看過得新名詞會在後續的章節介紹~</p>
+<p>而使用 public 宣告的變數或方法也會被繼承到子類別中~<br>關於繼承的概念在後續會有更詳細的介紹</p>
+<ol start="2">
+<li>private<br>表示私有的權限，無法被外部存取也不能被繼承<br><strong>是完全屬於該類別的</strong><br>考量到類別的封裝性原則，一般建議多採用 private 進行宣告<br>不過當然還是要考量到其他應用方面~</li>
+</ol>
+<p>但是若僅僅是要用來進行自己類別內的運用時<br>就會建議使用 private 而非 public~</p>
+<ol start="3">
+<li>protected<br>表示受保護的權限，簡單來說就是結合了安全性以及可被繼承的特點!<br>當使用 protected 宣告時，被宣告的變數或方法<strong>不可以</strong>被外部存取，但是可以被繼承<br>雖然看起來結合了很多優點，不過在使用上一般還是會是會斟酌使用!!!</li>
+</ol>
+<p>總結：<br>有些不該被繼承的私有變數都還是會建議以 private 宣告<br>然後要給外部呼叫存取的則以 public 做宣告<br>當方法僅提供給子類別使用的方法才以 protected 宣告~</p>
+<p>一般除了這些存取權限以外，還會考量到子類別的方法存取權限不可以小於父類別的權限…等問題 (好饒舌啊~~)<br>來進行更詳細的存取權限宣告~</p>
+<h2 id="2-自動載入"><a href="#2-自動載入" class="headerlink" title="2. 自動載入"></a>2. 自動載入</h2><p>在前面的章節曾經提到過<br>可以使用 include 或是 require 關鍵字來引入外部的 PHP 檔案，將每個 PHP 檔案進行分工~<br>如此一來就可以讓單一個 PHP 檔案看起來更加簡潔<br>在後續的維護方面也會更加容易</p>
+<p>而 PHP 另外有提供自動載入的函式 spl_autoload_register (適用於 PHP 5.1.0 以上和 PHP 7 的版本)<br>其餘的 PHP 版本則使用 __autoload 方法，因為已經被棄用了，所以這裡就不再提到了~</p>
+<p>使用自動載入的好處就是<br>我們不需要使用一大堆的 include 和 require~<br>PHP 會自動幫我們載入在檔案裡有使用到的外部資源檔案<br>讓撰寫上更加方便!</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">spl_autoload_register(function($class)&#123;</span><br><span class="line">	echo &quot;autoloading $class.&quot;;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">try&#123;</span><br><span class="line">	$obj = new testClass();</span><br><span class="line">&#125;catch(Exception $e)&#123;</span><br><span class="line">	var_dump($e);</span><br><span class="line">&#125;</span><br><span class="line">// 結果會印出 &quot;autoloading testClass&quot;</span><br></pre></td></tr></table></figure>
+<p>因此僅需要在 spl_autoload_register 函式裡面撰寫引入外部 PHP 檔案的程式碼即可~</p>
+<h2 id="3-建構元-解構元"><a href="#3-建構元-解構元" class="headerlink" title="3. 建構元/解構元"></a>3. 建構元/解構元</h2><p>這部分要介紹的是有關於物件被建立以及終結的時候會觸發的方法~</p>
+<ol>
+<li>建構元：當物件被建立時，會觸發建構元內的程式碼</li>
+<li>解構元：當物件被終結時，會觸發解構元內的程式碼<br>若不需要改寫建構元/解構元的情況下，可以在類別中省略~</li>
+</ol>
+<p><strong> 1. 建構元 </strong><br>在新版的 PHP 中，__construct 函式代表一個類別的建構元<br>(舊版則是使用和類別相同的名稱去代表建構元)<br>簡單來說建構元就是在一個物件剛被建立時觸發</p>
+<p>不過和其他程式語言不同的地方在於!!!<br>當子類別建立時，並不會觸發父類別的建構元!!!<br>需要另外呼叫 parent::__construct() 才會呼叫父類別的建構元~</p>
+<p><strong>並不會先建立父類別再建立子類別喔</strong><br>這是 PHP 和其他物件導向語言最大的不同之處~</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">class BaseClass</span><br><span class="line">&#123;</span><br><span class="line">	function __construct()&#123;</span><br><span class="line">		echo &quot;building BaseClass.&lt;br&gt;&quot;;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">class SubClass extends BaseClass</span><br><span class="line">&#123;</span><br><span class="line">	function __construct()&#123;</span><br><span class="line">		echo &quot;building SubClass.&lt;br&gt;&quot;;</span><br><span class="line">		parent::__construct();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">$obj = new SubClass();</span><br><span class="line"></span><br><span class="line">// 結果會印出如下的字串</span><br><span class="line">// building BaseClass.</span><br><span class="line">// building SubClass.</span><br></pre></td></tr></table></figure>
+<p><strong> 2. 解構元 </strong><br>在 PHP 當中是使用 <strong>destruct 函式去呼叫解構元<br>和建構元相反的是解構元，是當一個物件被終結的情況下會呼叫解構元<br>若有需要呼叫父類別的解構元的話<br>也需要另外呼叫 parent::</strong>destruct() 才可以喔!</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">class BaseClass</span><br><span class="line">&#123;</span><br><span class="line">	function __destruct()&#123;</span><br><span class="line">		echo &quot;destroy BaseClass.&lt;br&gt;&quot;;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">class SubClass extends BaseClass</span><br><span class="line">&#123;</span><br><span class="line">	function __destruct()&#123;</span><br><span class="line">		echo &quot;destroy SubClass.&lt;br&gt;&quot;;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">$obj = new SubClass();</span><br><span class="line"></span><br><span class="line">// 結果會印出 &quot;destroy SubClass.&quot;</span><br></pre></td></tr></table></figure>
+<h2 id="4-繼承"><a href="#4-繼承" class="headerlink" title="4. 繼承"></a>4. 繼承</h2><p>延續前面提到的繼承<br>這一章節就要來詳細介紹啦~<br>簡單來說就是屬於 public 和 protected 存取權限的方法以及變數都可以由某個類別繼承給另外一個類別<br>而繼承的子類別可以直接取用繼承類別定義的方法和變數~<br>如此一來就可以簡化類別的程式碼，也可以讓彼此的分層更加的明確~</p>
+<p>在 PHP 當中是透過 extends 關鍵字去繼承另一個類別<br>就可以從繼承的父類別那邊將屬於 public 和 protected 權限的方法、變數都繼承過來<br>而在子類別這邊也可以透過重新定義相同名稱的方法或變數來達到覆寫的效果<br>特別要注意的是!!!<br>改寫後的存取權限必須要大於原本定義的存取權限才可以~<br>例如：<br>原先在 A 類別使用 protected 去定義某個方法<br>當 B 類別去繼承 A 類別並且想要改寫 用 protected 定義的某個方法時，存取權限只可以是 protected 或是 public 才行~<br>另外在覆寫的時候，傳入的參數和原先定義的參數名稱不相同也可以正常運行喔~</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">class BaseClass</span><br><span class="line">&#123;	</span><br><span class="line">	protected function call($name)&#123;</span><br><span class="line">		echo &quot;Base $name&lt;br&gt;&quot;;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">class SubClass extends BaseClass</span><br><span class="line">&#123;	</span><br><span class="line">	public function call($n)&#123;</span><br><span class="line">		parent::call($n);</span><br><span class="line">		echo &quot;Sub $n&lt;br&gt;&quot;;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">$obj = new SubClass();</span><br><span class="line">$obj -&gt; call(&apos;test&apos;);</span><br><span class="line"></span><br><span class="line">// 結果會印出如下字串</span><br><span class="line">// Base test</span><br><span class="line">// Sub test</span><br></pre></td></tr></table></figure>
+<h2 id="5-範疇解析運算符號"><a href="#5-範疇解析運算符號" class="headerlink" title="5. 範疇解析運算符號"></a>5. 範疇解析運算符號</h2><p>在 PHP 裡面的範疇解析運算符號是使用雙冒號 <strong>(::)</strong><br>在雙冒號的後方可以接上變數或方法的名稱<br>它代表的意思是指定方法或變數的使用範圍<br>簡單來說就是我要呼叫或取用某個範圍定義的某個變數或方法</p>
+<p>比較常見的有 3 種，分別如下：</p>
+<ol>
+<li>self::</li>
+<li>static::</li>
+<li>parent::</li>
+</ol>
+<p>前面 2 種我會在後續有獨立的小章節來介紹，所以這邊僅先針對第 3 種來做介紹<br>其實在前面的範例就已經有看過第 3 種的寫法出現了~<br>它的意思就是我想要去取用/呼叫繼承父類別的某個變數或方法<br>下面來個小範例，透過 parent:: 方式取用父類別裡面定義的常數再列印出來</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">class BaseClass</span><br><span class="line">&#123;	</span><br><span class="line">	const NAME = &apos;Base&apos;;</span><br><span class="line">&#125;</span><br><span class="line">class SubClass extends BaseClass</span><br><span class="line">&#123;	</span><br><span class="line">	public function call()&#123;</span><br><span class="line">		echo parent::NAME;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">$obj = new SubClass();</span><br><span class="line">$obj -&gt; call();</span><br><span class="line">// 結果會印出 &quot;Base&quot;</span><br></pre></td></tr></table></figure>
+<p>比較特別的是<br>在類別當中定義的常數是屬於靜態的類型，因此是可以在不實做類別的情況下直接取用的<br>所以當上面的範例改寫成下方的程式碼時，會得到相同的結果~</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">class BaseClass</span><br><span class="line">&#123;	</span><br><span class="line">	const NAME = &apos;Base&apos;;</span><br><span class="line">&#125;</span><br><span class="line">class SubClass extends BaseClass</span><br><span class="line">&#123;	</span><br><span class="line">	public function call()&#123;</span><br><span class="line">		echo parent::NAME;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">echo BaseClass::NAME;</span><br><span class="line">// 結果一樣會印出 &quot;Base&quot;</span><br></pre></td></tr></table></figure>
+<p>而關於靜態的這個概念則在下一章節會介紹~</p>
+<h2 id="6-static-和-final-關鍵字"><a href="#6-static-和-final-關鍵字" class="headerlink" title="6. static 和 final 關鍵字"></a>6. static 和 final 關鍵字</h2><p>這一章節要介紹 static 和 final 關鍵字~</p>
+<p><strong> 1. static </strong><br>這個部分剛好延續前面提到的靜態的概念<br>我將靜態歸納成以下 3 種特性：</p>
+<ol>
+<li>定義成靜態的方法或變數屬於類別本身，表示所有類別只有 1 個</li>
+<li>延續特性 1，被定義成靜態的方法不可以被實做的類別取用，僅可以透過範疇解析運算符號的方式來取用</li>
+<li>將特性 2 換句話說，不需要實做類別也可以直接取用靜態的方法或變數</li>
+</ol>
+<p>只需要在變數或方法前面加上 static 關鍵字，就可以將變數或方法定義成靜態的屬性</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">class BaseClass</span><br><span class="line">&#123;</span><br><span class="line">	public static $name = &quot;Base&quot;;</span><br><span class="line">	</span><br><span class="line">	public function call()&#123;</span><br><span class="line">		echo self::$name;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">echo BaseClass::$name; // 結果會印出 &quot;Base&quot;</span><br><span class="line"></span><br><span class="line">$base = new BaseClass();</span><br><span class="line">echo $base-&gt;name; // 不會印出任何訊息...</span><br><span class="line"></span><br><span class="line">$base -&gt; call(); // 結果會印出 &quot;Base&quot;</span><br></pre></td></tr></table></figure>
+<p>針對類別或方法的不同用途，可以將部分方法定義成靜態類型<br>可以讓整體程式碼上更為簡潔~</p>
+<p><strong> 2. final </strong><br>而 final 的意思顧名思義就是最後的<br>當某個類別或方法不希望被覆寫的時候，就可以使用 final 關鍵字~</p>
+<p>而當使用 final 關鍵字去定義某個類別或方法時，會有以下的特性：</p>
+<ol>
+<li>被定義 final 的類別不可以被繼承</li>
+<li>被定義 final 的方法不可以被覆寫</li>
+<li>final 關鍵字不可以使用在變數上，替代是使用 const 去定義常數</li>
+</ol>
+<p>再來就來看看下面的範例吧~</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">final class BaseClass</span><br><span class="line">&#123;</span><br><span class="line">	public static $name = &quot;Base&quot;;</span><br><span class="line">	</span><br><span class="line">	public function call()&#123;</span><br><span class="line">		echo self::$name;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class SubClass extends BaseClass</span><br><span class="line">&#123;</span><br><span class="line">	// 結果會發生錯誤</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>要定義 final 的方法的話也是在方法前面加上 final 關鍵字<br>因此這裡就不多作示範啦~~~</p>
+<h2 id="7-抽象類別"><a href="#7-抽象類別" class="headerlink" title="7. 抽象類別"></a>7. 抽象類別</h2><p>在我們撰寫許多類別的時候，常常會發現會出現許多相同的方法，僅在變數的細微的地方不同而以<br>這時候我們就可以使用到抽象類別!!! 幫我們省略掉許多重複的程式碼~</p>
+<p>在一般的應用情景上<br>我們可以將重複的程式碼分離成一個方法，並將各自類別不同的程式碼撰寫成許多個抽象方法<br>讓繼承的類別去實做~</p>
+<p>說到這裡就先來提一下抽象類別的幾個特性吧~</p>
+<ol>
+<li>當類別當中的某個方法被定義成抽象方法時，這個類別就必須被定義成抽象類別</li>
+<li>抽象類別不可以被實做，只可以被繼承</li>
+<li>抽象方法也不可以被實做內容，只需要定義存取權限、名稱以及參數即可</li>
+<li>繼承的子類別必需要實做所有的抽象方法</li>
+<li>繼承類別實做抽象方法的存取權限只可以是相同或更高的存取權限</li>
+</ol>
+<p>看完之後你可能會想說，我難道不能直接繼承一個普通的類別就好嗎~<br>當然是可以的!<br>只不過抽象類別因為特性的關係，更具有強制性，可以確保每個繼承的子類別都具有各自的方法可以被呼叫<br>而在概念上，抽象類別也就像是一個共通的種類一般<br>比如說有一個貓和狗的類別，我可以建立一個動物的抽象類別<br>然後建立一個叫聲的方法，讓貓和狗類別分別去定義各自的叫聲~</p>
+<p>在 PHP 當中，只需要在類別或是方法的前面加上 abstract 關鍵字就可以建立抽象類別或方法了~</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">abstract class Animal</span><br><span class="line">&#123;</span><br><span class="line">	abstract public function call()&#123;&#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class Dog extends Animal</span><br><span class="line">&#123;</span><br><span class="line">	public function call()&#123;</span><br><span class="line">		echo &quot;wang~&quot;;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">class Cat extends Animal</span><br><span class="line">&#123;</span><br><span class="line">	public function call()&#123;</span><br><span class="line">		echo &quot;meow&quot;;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>透過實做抽象方法，可以實做屬於自己類別的方法內容<br>在呼叫相同方法時，去執行不同的內容~</p>
+<h2 id="8-介面"><a href="#8-介面" class="headerlink" title="8. 介面"></a>8. 介面</h2><p>在這一部分要介紹的是介面<br>介面和抽象類別其實非常相似<br>在定義介面的時候，不需要把方法實做，而繼承的子類別必需要實做所有的方法</p>
+<p>在使用上，我們可以從概念來區分兩者的差異<br>抽象類別比較像是共通的種類，例如男生女生都是人，就可以建立一個人的抽象類別<br>而介面就比較像是一個規範，比如說生活的規範，裡面可能包含吃東西、穿衣服…等等 (有點爛的比喻…如果有想到更好的話我再更新吧…)<br>以這種概念來區分的話，可以幫助我們更加明確的了解該使用抽象類別亦或是介面<br>當然在實做上都是可以互通的~<br>不過使用介面的好處就在於說<br>只要這個類別有實做某個介面，我就可以確定它有對應的方法可以呼叫<br>不用擔心會呼叫到一個不存在的方法或變數<br>從上面的說明來看，可以更加理解介面像是一個規範的概念~~</p>
+<p>另外一點則是<br>一個類別只可以繼承一個父類別<br>所以當我們想要同時<strong>“繼承”</strong>多個的時候，就可以以介面的方式去幫助我們達成期望的結果~</p>
+<p>再來一樣要提到介面的幾個特性：</p>
+<ol>
+<li>介面裡面定義的所有方法都必須為 public 的存取權限</li>
+<li>實做的子類別必需要實做所有在介面裡定義的方法</li>
+<li>當子類別同時實做多個介面時，不同介面之間不可以有相同名稱的方法</li>
+<li>當子類別在實做介面時，方法必需要和介面裡定義的完全一致</li>
+<li>介面可以使用 extends 關鍵字去繼承其它介面</li>
+</ol>
+<p>看完特性會發現其實介面和抽象類別是真的非常相似，也常常會讓人搞混<br>我的建議是從概念著手，可以讓我們更加釐清兩者的區別~</p>
+<p>在 PHP 當中，則是使用 interface 這個關鍵字去定義一個介面<br>而類別則是使用 implements 關鍵字去實做介面<br>再來就看看下面的範例吧!</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">interface BaseInterface&#123;</span><br><span class="line">	public function call();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class BaseClass implements BaseInterface&#123;</span><br><span class="line">	public function call()&#123;</span><br><span class="line">		echo &quot;BaseClass.&quot;;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">$obj = new BaseClass();</span><br><span class="line">$obj -&gt; call(); // 結果會印出 &quot;BaseClass.&quot;</span><br></pre></td></tr></table></figure>
+<p>可以透過介面和抽象類別去完成更加簡潔的程式碼~</p>
+<h2 id="9-匿名類別"><a href="#9-匿名類別" class="headerlink" title="9. 匿名類別"></a>9. 匿名類別</h2><p>上半章的最後一個小章節要介紹的是匿名類別<br>顧名思義就是可以不需要提供一個特定的名稱</p>
+<p>一般我們要實做一個類別的時候，會像下面的程式碼<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$obj = new Class();</span><br></pre></td></tr></table></figure></p>
+<p>而匿名類別則是省略了前面的特定名稱，例如<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">testFunc(new Class());</span><br></pre></td></tr></table></figure></p>
+<p>一般會使用匿名類別的情況有兩種原因</p>
+<ol>
+<li>簡單目的： 也就是說並不會在其他地方使用到，因此可以省略給定一個特定名稱 (當然還是會依據程式碼而定)</li>
+<li>單行物件的寫法： 直接在要傳遞物件的地方，將類別以及內容一併實做後傳入，例如下方的程式碼範例：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$util -&gt; setLogger(new Class&#123;</span><br><span class="line">	public function log($msg)&#123;</span><br><span class="line">		echo $msg;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>其實上述的兩種原因都蠻類似的<br>適當的使用可以幫助讓程式碼更加簡潔<br>不過我個人比較不建議使用單行物件的寫法~<br>將類別另外定義會比較容易維護，在程式碼的方面也不會太過於混亂~</p>
+<p>總體來說，還是會根據用途和程式碼撰寫的方式去決定該使用哪種方式~<br>如果後續不會需要繼續使用同一物件的話，不妨嘗試使用看看匿名類別的方式~</p>
 
       
 
@@ -267,7 +362,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/09/17/php-Constants/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/01/04/php-Classes-and-objects-1/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -281,18 +376,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2018/09/19/php-Expressions/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          php-Expressions
-        
-      </div>
-    </a>
   
-  
-    <a href="/2018/09/17/php-Variables/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">php-Variables</div>
+    <a href="/2018/11/27/php-Functions/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">php-Functions</div>
       <i class="icon-circle-right"></i>
     </a>
   
