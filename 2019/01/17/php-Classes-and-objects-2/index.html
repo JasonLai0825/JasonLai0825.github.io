@@ -6,15 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Tag: php | JasonLai&#39;s blog</title>
+  <title>php-Classes and objects (上) | JasonLai&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="JasonLai&#39;s blog">
-<meta property="og:url" content="http://yoursite.com/tags/php/index.html">
+  <meta name="description" content="這部分要繼續介紹下半章~主要會分為：  多載 物件的複製與比較 型別約束 後期靜態綁定 物件的引用 序列化  下半章相對簡單一點雖然其中一些可能不常會使用到但相對的，也有非常重要的概念在裡頭~事不宜遲，就馬上開始介紹吧!">
+<meta name="keywords" content="php">
+<meta property="og:type" content="article">
+<meta property="og:title" content="php-Classes and objects (上)">
+<meta property="og:url" content="http://yoursite.com/2019/01/17/php-Classes-and-objects-2/index.html">
 <meta property="og:site_name" content="JasonLai&#39;s blog">
+<meta property="og:description" content="這部分要繼續介紹下半章~主要會分為：  多載 物件的複製與比較 型別約束 後期靜態綁定 物件的引用 序列化  下半章相對簡單一點雖然其中一些可能不常會使用到但相對的，也有非常重要的概念在裡頭~事不宜遲，就馬上開始介紹吧!">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-01-17T13:06:21.515Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JasonLai&#39;s blog">
+<meta name="twitter:title" content="php-Classes and objects (上)">
+<meta name="twitter:description" content="這部分要繼續介紹下半章~主要會分為：  多載 物件的複製與比較 型別約束 後期靜態綁定 物件的引用 序列化  下半章相對簡單一點雖然其中一些可能不常會使用到但相對的，也有非常重要的概念在裡頭~事不宜遲，就馬上開始介紹吧!">
   
     <link rel="alternative" href="/atom.xml" title="JasonLai&#39;s blog" type="application/atom+xml">
   
@@ -140,122 +145,99 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-php-Classes-and-objects-2" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      php-Classes and objects (上)
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/01/17/php-Classes-and-objects-2/" class="archive-article-date">
+
+        
+        <a href="/2019/01/17/php-Classes-and-objects-2/" class="archive-article-date">
   	<time datetime="2019-01-17T13:06:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-17</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/01/17/php-Classes-and-objects-2/">php-Classes and objects (上)</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">php</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
+        
+      </header>
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/01/04/php-Classes-and-objects-1/" class="archive-article-date">
-  	<time datetime="2019-01-04T13:19:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-04</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/01/04/php-Classes-and-objects-1/">php-Classes and objects (上)</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">php</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
+    <div class="article-entry" itemprop="articleBody">
       
-        </div></section>
+        <p>這部分要繼續介紹下半章~<br>主要會分為：</p>
+<ol>
+<li>多載</li>
+<li>物件的複製與比較</li>
+<li>型別約束</li>
+<li>後期靜態綁定</li>
+<li>物件的引用</li>
+<li>序列化</li>
+</ol>
+<p>下半章相對簡單一點<br>雖然其中一些可能不常會使用到<br>但相對的，也有非常重要的概念在裡頭~<br>事不宜遲，就馬上開始介紹吧!<br><a id="more"></a></p>
+<h2 id="1-多載"><a href="#1-多載" class="headerlink" title="1. 多載"></a>1. 多載</h2><p>第一章要先來介紹 PHP 的多載<br>在其他語言中的多載會像是使用同一個函式名稱，然後用不同的參數或回傳型態去區別各種方法~<br>但是!!!<strong>在 PHP 的多載並不是這樣</strong><br>在 PHP 裡多載的定義會是<strong>動態</strong>去建立屬性或方法<br>通過定義 magic method (魔術方法) 去實現 PHP 定義的多載</p>
+<p>這裡先額外說明一下什麼是魔術方法<br>就是一系列以 <strong>__</strong> 開頭的方法名稱，它們會在特定的時機被呼叫<br>例如 __construct() 就是建構元，會在建立物件的時候被呼叫~</p>
+<p>還有一點要特別注意的就是多載的參數都<strong>不可以以傳參考</strong>的方式傳入!!!<br>只能以普通傳值的方式將參數傳到魔術方法裡</p>
+<p>而在 PHP 當中的多載有分為兩種，分別是屬性多載和方法多載<br>區別在於試圖呼叫不存在的屬性還是方法，就對應屬性多載或是方法多載~<br>下面就依序來介紹屬性多載以及方法多載</p>
+<p><strong> 1. 屬性多載</strong><br>屬性多載有以下 4 種對應的方法</p>
+<ol>
+<li><p><strong>set(string $name, mixed $value)<br>當試圖在物件裡面寫入不存在的屬性的時候，就會呼叫 </strong>set 這個魔術方法</p>
+</li>
+<li><p><strong>get(string $name)<br>當試圖在物件裡面讀取不存在的屬性的時候，就會呼叫 </strong>get 這個魔術方法</p>
+</li>
+<li><p>__isset(string $name)<br>如果我們對某個物件使用 isset() 或是 empty() 方法作判斷時，則會觸發這個魔術方法</p>
+</li>
+<li><p>__unset(string $name)<br>當我們針對某物件作 unset() 時，會觸發這個魔術方法</p>
+</li>
+</ol>
+<p>當我們試圖對物件執行上面的 4 種操作時，就必需要先在類別當中定義對應的魔術方法，達到多載的效果<br>如此一來，操作才會被正常的執行，反之則會因為呼叫不存在的屬性而發生錯誤!<br>可以視需求在類別中定義這些魔術方法~</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">class BaseClass&#123;</span><br><span class="line">	function __get($var)&#123;</span><br><span class="line">		echo &quot;$var is not exists.&quot;;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">$obj = new BaseClass();</span><br><span class="line">echo $obj-&gt;name; // 結果會印出 &quot;name is not exists.&quot;</span><br></pre></td></tr></table></figure>
+<p><strong> 2. 方法多載</strong><br>而方法多載有以下 2 種對應的方法，分別是</p>
+<ol>
+<li><p><strong>call(string $name, array $arguments)<br>當試圖呼叫不存在類別中的方法時，會觸發 </strong>call 魔術方法</p>
+</li>
+<li><p><strong>callStatic(string $name, array $arguments)<br>和 </strong>call 魔術方法的差異在於，當試圖呼叫不存在類別中的靜態方法時，則會觸發 <strong>callStatic 而非 </strong>call</p>
+</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">class BaseClass&#123;</span><br><span class="line">	function __call($func, array $arguments)&#123;</span><br><span class="line">		echo &quot;$func is not exists.&quot;;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">$obj = new BaseClass();</span><br><span class="line">$obj -&gt; callName(); // 結果會印出 &quot;callName is not exists.&quot;</span><br></pre></td></tr></table></figure>
+<h2 id="2-物件的複製與比較"><a href="#2-物件的複製與比較" class="headerlink" title="2. 物件的複製與比較"></a>2. 物件的複製與比較</h2><p>這個章節我把物件的複製和比較放在一起介紹<br>但其實在實做上並不會很常用到這兩種~~<br>不過物件的複製也算是 PHP 的一個特色 (我自己認為 XD<br>所以還是稍為帶到一下~</p>
+<p><strong> 複製 </strong><br>主要是使用 clone 這個關鍵字進行物件的複製<br>可以複製另外一個相同的物件出來<br>另外在 PHP 當中，也有提供 <strong>clone 這個魔術方法<br>當我們使用 clone 這個關鍵字的時候，就會觸發 </strong>clone 這個魔術方法~<br>一樣也可以通過覆寫 __clone 來客製化物件複製的函式內容</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">class testClass &#123;</span><br><span class="line">	function __clone()&#123;</span><br><span class="line">		echo &quot;cloning...&quot;;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">$obj = new testClass();</span><br><span class="line">$obj2 = clone $obj; // 結果會印出 &quot;cloning...&quot;</span><br></pre></td></tr></table></figure>
+<p><strong> 比較 </strong><br>而比較的部分就相對簡單許多<br>可以使用 == 或是 === 來比較兩個物件是否相同<br>而兩者的差異在於<br>當使用 == 時，僅會比較兩個物件的數值是否相同<br>而當使用 === ，不只會比較數值，還同時會比較型態是否相同<br>一般可能常見於比較物件是否等於 false<br>這時候就可以使用 === 來確保判斷正確~</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">class testClass &#123;</span><br><span class="line">&#125;</span><br><span class="line">class compareClass &#123;</span><br><span class="line">&#125;</span><br><span class="line">$obj = new testClass();</span><br><span class="line">$obj2 = new compareClass();</span><br><span class="line"></span><br><span class="line">var_dump($obj == $obj2);  // 結果會印出 &quot;bool(false)&quot;</span><br></pre></td></tr></table></figure>
+<h2 id="3-型別約束"><a href="#3-型別約束" class="headerlink" title="3. 型別約束"></a>3. 型別約束</h2><p>在一般撰寫 C++、C#… 等語言的時候，我們都必需要在函式的參數加上參數的型態<br>例如 string or float…等等<br>這個代表傳進來的參數必需要符合這個型態<br>而根據不同型態或參數的個數也就成為了其他語言的多載~</p>
+<p>但是 PHP 在正常的情況下是不需要作型態的指定的<br>原因是因為 PHP 會在實際使用到變數的時候才辨識變數的型態<br>所以可以在不指定型態的情況下自由運用變數<br>是非常方便使用的一個機制!</p>
+<p>不過反過來說<br>在不指定型態的情況下，也代表著無法確認變數的型態<br>就需要在使用變數之前先作判斷，避免變數的型態不符合預期而發生錯誤!<br>這同樣適用於函適的參數~</p>
+<p>因此在 PHP 5 裡面加入了一個型別約束的機制，讓 PHP 可以像其他語言一樣，對<strong>參數</strong>進行型別的約束<br>特別要注意的是：</p>
+<ol>
+<li>型別約束只針對函式的參數</li>
+<li>型別約束不可以用在外部 resource 或是純量上 (如 stringin、float)</li>
+</ol>
+<p>上面的說明只是為了解釋型別約束的用意而已<br>實際運用是不可以用在純量上的!<br>可以用來約束特定的類別<br>限定傳入特定的類別進行操作!</p>
+<p>在宣告函式的時候，可以在參數的前面加上型態<br>這時候傳遞的參數就必須符合函式的型態，才可以正常執行~</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">class baseClass &#123;</span><br><span class="line">	public $name = &quot;baseClass&quot;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class testClass &#123;</span><br><span class="line">	static function call(baseClass $obj)&#123;</span><br><span class="line">		echo $obj-&gt;name;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">testClass::call(new baseClass()); // 結果會印出 &quot;baseClass&quot;</span><br></pre></td></tr></table></figure>
+<h2 id="4-後期靜態綁定"><a href="#4-後期靜態綁定" class="headerlink" title="4. 後期靜態綁定"></a>4. 後期靜態綁定</h2><p>這是 PHP 在撰寫類別的一個非常重要的小細節!!!<br>後期靜態綁定和前期靜態綁定是兩個成對的概念，並且都常常會使用到!</p>
+<p>兩者的區別在於呼叫類別的方法時，會分別去使用哪個類別裡面定義的方法<br>換句話來說就是當某個子類別繼承父類別的同時又去改寫的父類別定義的某個方法時<br>可以透過這兩種方法去區分<strong>現在</strong>要執行的是原定義的方法，還是改寫後的方法~<br>透過下面的描述應該可以幫助了解這個概念</p>
+<p><strong> 前期靜態綁定 </strong><br>當使用 self:: 這個關鍵字時，就代表前期靜態綁定<br>只要使用 後面接上的方法時，只會呼叫自己類別裡定義的對應方法<br>就算這個方法被子類別所改寫，仍然後呼叫自己定義的方法。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">class A &#123;</span><br><span class="line">	public static function info()&#123;</span><br><span class="line">		echo __class__;</span><br><span class="line">	&#125;</span><br><span class="line">	public static function call()&#123;</span><br><span class="line">		self::info();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">class B extends A &#123;</span><br><span class="line">	public static function info()&#123;</span><br><span class="line">		echo __class__;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">B::call(); // 結果會印出 &quot;A&quot;</span><br></pre></td></tr></table></figure>
+<p><strong> 後期靜態綁定 </strong><br>而後期靜態綁定則是在呼叫方法的時候先去找自己類別有沒有改寫後的方法<br>若沒有才會使用父類別裡面定義的方法</p>
+<p>可以使用的關鍵字有兩種<br>分別是 static:: 和 $this-&gt;<br>這兩種都可以代表後期靜態綁定<br>差別在於 static 適用於靜態方法，而 $this 適用於一般方法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">class A &#123;</span><br><span class="line">	public static function info()&#123;</span><br><span class="line">		echo __class__;</span><br><span class="line">	&#125;</span><br><span class="line">	public static function call()&#123;</span><br><span class="line">		static::info();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">class B extends A &#123;</span><br><span class="line">	public static function info()&#123;</span><br><span class="line">		echo __class__;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">B::call(); // 結果會印出 &quot;B&quot;</span><br></pre></td></tr></table></figure>
+<h2 id="5-物件的引用"><a href="#5-物件的引用" class="headerlink" title="5. 物件的引用"></a>5. 物件的引用</h2><p>這部分要提到一個 PHP 物件的重要概念<br>就是在 PHP 當中要使用物件時，實際上是取用物件的一個<strong>辨識</strong>，而非物件本身<br>不管是使用傳值、傳參考或是函式回傳的方式，實際上都是去複製物件的辨識<br>所以後續的任何操作其實都是在操作同一個物件!<br>這和之前提到的變數是不一樣的，所以特別提一下~</p>
+<p>下面使用一般賦值的方式作一個示範<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">class testClass &#123;</span><br><span class="line">	public $val = 1;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">$testA = new testClass();</span><br><span class="line">$testB = $testA;</span><br><span class="line">$testB-&gt;val = 2;</span><br><span class="line">echo $testA-&gt;val; // 結果會印出 2</span><br></pre></td></tr></table></figure></p>
+<h2 id="6-序列化"><a href="#6-序列化" class="headerlink" title="6. 序列化"></a>6. 序列化</h2><p>在 PHP 當中有提供將物件序列化以及反序列化的方法<br>分別是 serizlize() 和 unserizlize()<br>可以將類別轉化為字串，方便傳遞到其他檔案裡進行<strong>實做</strong></p>
+<p>在一般的情況下，我們可能更常聽過 JSON<br>而 PHP 當中也有提供 json_encode() 和 json_decode() 的方法<br>也同樣是輕量化的資料傳輸格式</p>
+<p>但最大的區別在於<br>PHP 自己提供的序列化方法是適用於 PHP 的 (有點怪的邏輯<br>而 JSON 比較像是適用於多種的語言<br>而這些造成的差異就是</p>
+<p>我們可以將一個定義好的類別用 PHP 提供的序列化方法進行序列化<br>傳到其他檔案再反序列化之後，仍然可以將這個定義好的類別進行<strong>實做</strong> (也就是 new 出來)<br>這是和 JSON 不一樣的地方~</p>
+<p>不過其實我也沒有使用過~<br>根據官方的描述，應該是適用於 session 在儲存的時候吧!<br>下方就附上一個官方文檔的範例來說明~</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">// classa.inc:</span><br><span class="line">  </span><br><span class="line">class A &#123;</span><br><span class="line">  public $one = 1;</span><br><span class="line"></span><br><span class="line">  public function show_one() &#123;</span><br><span class="line">	  echo $this-&gt;one;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">  </span><br><span class="line">// page1.php:</span><br><span class="line"></span><br><span class="line">include(&quot;classa.inc&quot;);</span><br><span class="line"></span><br><span class="line">$a = new A;</span><br><span class="line">$s = serialize($a);</span><br><span class="line">// 把变量$s保存起来以便文件page2.php能够读到</span><br><span class="line">file_put_contents(&apos;store&apos;, $s);</span><br><span class="line"></span><br><span class="line">// page2.php:</span><br><span class="line">  </span><br><span class="line">// 要正确了解序列化，必须包含下面一个文件</span><br><span class="line">include(&quot;classa.inc&quot;);</span><br><span class="line"></span><br><span class="line">$s = file_get_contents(&apos;store&apos;);</span><br><span class="line">$a = unserialize($s);</span><br><span class="line"></span><br><span class="line">// 现在可以使用对象$a里面的函数 show_one()</span><br><span class="line">$a-&gt;show_one();</span><br></pre></td></tr></table></figure>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/11/27/php-Functions/" class="archive-article-date">
-  	<time datetime="2018-11-27T15:21:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-27</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/11/27/php-Functions/">php-Functions</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -267,285 +249,106 @@
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/01/17/php-Classes-and-objects-2/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/10/17/php-Control_Structure/" class="archive-article-date">
-  	<time datetime="2018-10-17T14:32:48.974Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-17</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2019/01/04/php-Classes-and-objects-1/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">php-Classes and objects (上)</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/10/17/php-Control_Structure/">PHP-Control Structure</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">php</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/10/03/php-Operators/" class="archive-article-date">
-  	<time datetime="2018-10-02T16:15:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-03</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/10/03/php-Operators/">php-Operators</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">php</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/09/19/php-Expressions/" class="archive-article-date">
-  	<time datetime="2018-09-19T14:58:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-19</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/09/19/php-Expressions/">php-Expressions</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">php</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/09/17/php-Constants/" class="archive-article-date">
-  	<time datetime="2018-09-17T13:43:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-17</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/09/17/php-Constants/">php-Constants</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">php</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/09/17/php-Variables/" class="archive-article-date">
-  	<time datetime="2018-09-16T16:33:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-17</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/09/17/php-Variables/">php-Variables</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">php</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/09/13/php-Types/" class="archive-article-date">
-  	<time datetime="2018-09-13T14:24:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-13</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/09/13/php-Types/">php-Types</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">php</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/09/10/php/" class="archive-article-date">
-  	<time datetime="2018-09-10T13:26:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-10</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/09/10/php/">php</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">php</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -568,9 +371,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
