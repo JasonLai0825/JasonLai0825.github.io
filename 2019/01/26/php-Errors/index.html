@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="JasonLai&#39;s blog">
 <meta property="og:description" content="這一章節主要要介紹的是 PHP 的錯誤(???是錯誤控管與回報才對! 主要會分成兩個部分來介紹  basic try catch  第一個部分主要會介紹到 PHP 錯誤回報層級以及相對應的設定檔..等等而第二個部分則是會介紹如何使用 try catch 去偵錯~">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-01-26T09:07:27.688Z">
+<meta property="og:updated_time" content="2019-01-26T09:08:42.179Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="php-Errors">
 <meta name="twitter:description" content="這一章節主要要介紹的是 PHP 的錯誤(???是錯誤控管與回報才對! 主要會分成兩個部分來介紹  basic try catch  第一個部分主要會介紹到 PHP 錯誤回報層級以及相對應的設定檔..等等而第二個部分則是會介紹如何使用 try catch 去偵錯~">
@@ -241,11 +241,19 @@
 </thead>
 <tbody>
 <tr>
-<td style="text-align:left"></td>
+<td style="text-align:left">display_errors</td>
+<td>列印出錯誤訊息</td>
+</tr>
+<tr>
+<td style="text-align:left">log_errors</td>
+<td>將錯誤訊息記錄到 error_log 或 syslog 中</td>
+</tr>
+<tr>
+<td style="text-align:left">set_error_handler</td>
+<td>自定義錯誤回報訊息</td>
 </tr>
 </tbody>
 </table>
-<p>display_errors|列印出錯誤訊息<br>log_errors|將錯誤訊息記錄到 error_log 或 syslog 中<br>set_error_handler|自定義錯誤回報訊息</p>
 <p>一般常見的還可以使用 var_dump 將變數列印出來檢查是否有符合預期~</p>
 <h2 id="2-try-catch"><a href="#2-try-catch" class="headerlink" title="2. try catch"></a>2. try catch</h2><p>在 PHP 5 之後有提供錯誤處理方法<br>也就是 try catch 的語法，而它的功用和其他程式語言是相同的<br>當有異常發生在 try 的區塊裡的時候，會到 catch 限定的異常類型進行比對<br>如果有符合的異常類型，則會根據裡面的程式碼進行異常處理<br>反過來說!<br>如果在 catch 的區塊中都沒有符合的異常類型，也沒有使用 set_exception_handler 進行自定義錯誤處理的話<br>就會讓程式碼中斷執行!</p>
 <h2 id="finally"><a href="#finally" class="headerlink" title="finally"></a>finally</h2><p>而 try catch 還可以和 finally 搭配<br>而他們的執行順序是</p>
