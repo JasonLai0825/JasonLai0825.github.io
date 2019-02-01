@@ -6,15 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2019 | JasonLai&#39;s blog</title>
+  <title>php-Exceptions | JasonLai&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="JasonLai&#39;s blog">
-<meta property="og:url" content="http://yoursite.com/archives/2019/index.html">
+  <meta name="description" content="這一章節要介紹的是 Exception會接續前一章節繼續作更詳細的補充!而這一章節主要要介紹的是：  try catch (會作更詳細的介紹) set_exception_handler (自定義錯誤處理方式) 自定義 Exception 類別  讓我們往下看吧~~">
+<meta name="keywords" content="php">
+<meta property="og:type" content="article">
+<meta property="og:title" content="php-Exceptions">
+<meta property="og:url" content="http://yoursite.com/2019/02/01/php-Exceptions/index.html">
 <meta property="og:site_name" content="JasonLai&#39;s blog">
+<meta property="og:description" content="這一章節要介紹的是 Exception會接續前一章節繼續作更詳細的補充!而這一章節主要要介紹的是：  try catch (會作更詳細的介紹) set_exception_handler (自定義錯誤處理方式) 自定義 Exception 類別  讓我們往下看吧~~">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-02-01T14:19:29.496Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JasonLai&#39;s blog">
+<meta name="twitter:title" content="php-Exceptions">
+<meta name="twitter:description" content="這一章節要介紹的是 Exception會接續前一章節繼續作更詳細的補充!而這一章節主要要介紹的是：  try catch (會作更詳細的介紹) set_exception_handler (自定義錯誤處理方式) 自定義 Exception 類別  讓我們往下看吧~~">
   
     <link rel="alternative" href="/atom.xml" title="JasonLai&#39;s blog" type="application/atom+xml">
   
@@ -144,36 +149,62 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-php-Exceptions" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      php-Exceptions
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/02/01/php-Exceptions/" class="archive-article-date">
+
+        
+        <a href="/2019/02/01/php-Exceptions/" class="archive-article-date">
   	<time datetime="2019-02-01T14:19:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-01</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/02/01/php-Exceptions/">php-Exceptions</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>這一章節要介紹的是 Exception<br>會接續前一章節繼續作更詳細的補充!<br>而這一章節主要要介紹的是：</p>
+<ol>
+<li>try catch (會作更詳細的介紹)</li>
+<li>set_exception_handler (自定義錯誤處理方式)</li>
+<li>自定義 Exception 類別</li>
+</ol>
+<p>讓我們往下看吧~~<br><a id="more"></a></p>
+<h2 id="1-try-catch"><a href="#1-try-catch" class="headerlink" title="1. try catch"></a>1. try catch</h2><p>這邊會接續前一章節繼續介紹 try catch<br>首先在 catch 區塊的部分<br>裡面可以接的類型僅有 Exceptions 類別或是繼承 Exceptions 的子類別<br>如下所示</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">try&#123;</span><br><span class="line">	// ...</span><br><span class="line">&#125;catch(Exception $e)&#123;</span><br><span class="line">	// ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>另外昨天有提過<br>可以使用多個 catch 去抓取不同的異常類型<br>但是!!!<br>如果今天有兩種不同的異常類型都想要使用同樣的對應方法的話<br>就可以使用 | 這個符號，去區隔多種異常類型</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">class CommonException extends Exception&#123;</span><br><span class="line">	// ...</span><br><span class="line">&#125;</span><br><span class="line">class MyException extends Exception</span><br><span class="line">&#123;</span><br><span class="line">	// ...</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">try&#123;</span><br><span class="line">	echo &quot;begin..&lt;br&gt;&quot;;</span><br><span class="line">&#125;catch(Exception | MyException $e)&#123;</span><br><span class="line">	echo &quot;catch error.&quot;;</span><br><span class="line">&#125;finally &#123;</span><br><span class="line">	echo &quot;end...&lt;br&gt;&quot;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="2-set-exception-handler"><a href="#2-set-exception-handler" class="headerlink" title="2. set_exception_handler"></a>2. set_exception_handler</h2><p>第二小節要接續第一小節的部分<br>這一部分要介紹自定義異常處理<br>前面曾經提過<br>如果在 catch 的區塊沒有成功抓取到異常的話<br>會產生 Uncaught Exception 的錯誤訊息導致程式碼中斷<br>這時候除了更換抓取的異常類型之外，可以使用自定義錯誤訊息的方式來處理</p>
+<p>換句話來說<br>使用 try catch 的話，catch 區塊可以捕捉在 try 區塊內所發生的對應的異常類型<br>而使用 set_exception_handler 則可以捕捉不在 try 區塊內所發生的異常類型</p>
+<p>但是!!!<br>set_exception_handler 僅僅只是捕捉異常並按照自定義的去處理而已<br>它無法阻止程式碼的中斷<br>請參考下面的範例來加深理解吧~</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">function exception_handler($exception) &#123;</span><br><span class="line">  echo &quot;Uncaught exception: &quot; , $exception-&gt;getMessage(), &quot;\n&quot;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">set_exception_handler(&apos;exception_handler&apos;);</span><br><span class="line"></span><br><span class="line">throw new Exception(&apos;Uncaught Exception&apos;);</span><br><span class="line">echo &quot;Not Executed\n&quot;;</span><br><span class="line"></span><br><span class="line">// 結果會印出 &quot;Uncaught exception: Uncaught Exception&quot;</span><br></pre></td></tr></table></figure>
+<p>你會發現在異常發生的下一行字串並沒有被印出來<br>在正常不使用 set_exception_handler 的情況下<br>若有異常發生的時候，會造成錯誤代碼 500 的無法顯示網頁<br>而使用 set_exception_handler 僅只是避免發生錯誤代碼 500 的異常網頁而已<br><strong>並不能夠阻止網頁的中斷</strong><br>因此在這種情況或是需要 debug 的時候，仍然會建議使用 try catch 會比較恰當喔~</p>
+<h2 id="3-自定義-Exception-類別"><a href="#3-自定義-Exception-類別" class="headerlink" title="3. 自定義 Exception 類別"></a>3. 自定義 Exception 類別</h2><p>在一般使用 try catch 去抓取異常類型的時候<br>我們通常會使用 Exception 這個類別，因為它可以抓取所有可能產生的異常類型<br>換句話說，Exception 就是異常類型的基底類別，是 PHP 本來就預設存在的類別<br>也因此當我們想要自定義一個異常類別的時候，<strong>需要先繼承 Exception 這個類別</strong></p>
+<p>詳細的 Exception 類別在官方的文件中有正式的介紹<br>因此這邊就不再列出完整的 Exception 類別了~<br>底下會比較偏向如何繼承 Exception 去實做一個客製化的異常類別為主!</p>
+<p>首先在官方的文件中有提到<br>在自定義 Exception 類別的時候，若有改寫建構元的時候，建議呼叫父類別的建構元，也就是 parent::__construct()<br>用來確保在 Exception 類別中的所有成員變數都有被賦值了<br>另外要注意!!!<br>在改寫建構元的時候，必需要傳入 Exception 類別建構元的所有參數<br>按照順序分別是</p>
+<ol>
+<li>$message: 異常的訊息</li>
+<li>$code: 自定義的錯誤代碼</li>
+<li>Exception $previous: 適用於巢狀異常 (也就是雙重的 try catch~)，代表前一個異常類型</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">class MyException extends Exception</span><br><span class="line">&#123;</span><br><span class="line">	public function __construct($message, $code = 0, Exception $exception = null)&#123;</span><br><span class="line">		parent::__construct($message, $code, $exception);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>而我們也可以自定義錯誤訊息<br>只需要改寫 <strong>toString 方法即可<br>在前面的章節曾經提過，當類別被當成字串呼叫的情況下就會觸發 </strong>toString 這個魔術方法<br>如果使用 try catch 抓到自定義異常類別的時候，就會將我們自定的錯誤訊息顯示於畫面上</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">class MyException extends Exception</span><br><span class="line">&#123;</span><br><span class="line">	public function __construct($message, $code = 0, Exception $exception = null)&#123;</span><br><span class="line">		parent::__construct($message, $code, $exception);</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">    public function __toString() &#123;</span><br><span class="line">        return &quot;MyException custom response messages.&quot;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">try&#123;</span><br><span class="line">	throw new MyException(&apos;throw a test exception&apos;);</span><br><span class="line">&#125;catch(MyException $e)&#123;</span><br><span class="line">	echo $e;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 結果會印出 &quot;MyException custom response messages.&quot;</span><br></pre></td></tr></table></figure>
+<p>這樣就完成一個簡單的自定義錯誤類型了~<br>當然也可以作更多的客製化方法去處理異常的問題~</p>
 
-        <div class="article-info info-on-right">
-          
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -185,133 +216,106 @@
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/02/01/php-Exceptions/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/01/26/php-Errors/" class="archive-article-date">
-  	<time datetime="2019-01-26T09:02:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-26</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2019/01/26/php-Errors/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">php-Errors</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/01/26/php-Errors/">php-Errors</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">php</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/01/17/php-Classes-and-objects-2/" class="archive-article-date">
-  	<time datetime="2019-01-17T13:06:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-17</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/01/17/php-Classes-and-objects-2/">php-Classes and objects (下)</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">php</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/01/04/php-Classes-and-objects-1/" class="archive-article-date">
-  	<time datetime="2019-01-04T13:19:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-04</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/01/04/php-Classes-and-objects-1/">php-Classes and objects (上)</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">php</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -334,8 +338,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
