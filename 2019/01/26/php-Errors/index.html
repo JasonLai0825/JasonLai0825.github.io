@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>php-Errors | JasonLai&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="這一章節主要要介紹的是 PHP 的錯誤(???是錯誤控管與回報才對!這個章節可以和下一章 Exceptions 合併來觀看在這一章節提到的部分內容都會在下一章節有更詳細的介紹~ 主要會分成兩個部分來介紹  basic try catch  第一個部分主要會介紹到 PHP 錯誤回報層級以及相對應的設定檔..等等而第二個部分則是會介紹如何使用 try catch 去偵錯~">
+  <meta name="description" content="這一章節主要要介紹的是 PHP 的錯誤(???是錯誤控管與回報才對!這個章節可以和下一章 Exceptions 合併來觀看在這一章節提到的部分內容都會在下一章節有更詳細的介紹~ 主要會分成兩個部分來介紹  basic try catch set_error_handler  第一個部分主要會介紹到 PHP 錯誤回報層級以及相對應的設定檔..等等而第二個部分則是會介紹如何使用 try catch 去">
 <meta name="keywords" content="php">
 <meta property="og:type" content="article">
 <meta property="og:title" content="php-Errors">
 <meta property="og:url" content="http://yoursite.com/2019/01/26/php-Errors/index.html">
 <meta property="og:site_name" content="JasonLai&#39;s blog">
-<meta property="og:description" content="這一章節主要要介紹的是 PHP 的錯誤(???是錯誤控管與回報才對!這個章節可以和下一章 Exceptions 合併來觀看在這一章節提到的部分內容都會在下一章節有更詳細的介紹~ 主要會分成兩個部分來介紹  basic try catch  第一個部分主要會介紹到 PHP 錯誤回報層級以及相對應的設定檔..等等而第二個部分則是會介紹如何使用 try catch 去偵錯~">
+<meta property="og:description" content="這一章節主要要介紹的是 PHP 的錯誤(???是錯誤控管與回報才對!這個章節可以和下一章 Exceptions 合併來觀看在這一章節提到的部分內容都會在下一章節有更詳細的介紹~ 主要會分成兩個部分來介紹  basic try catch set_error_handler  第一個部分主要會介紹到 PHP 錯誤回報層級以及相對應的設定檔..等等而第二個部分則是會介紹如何使用 try catch 去">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-01-28T14:35:47.380Z">
+<meta property="og:updated_time" content="2019-02-02T14:01:38.265Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="php-Errors">
-<meta name="twitter:description" content="這一章節主要要介紹的是 PHP 的錯誤(???是錯誤控管與回報才對!這個章節可以和下一章 Exceptions 合併來觀看在這一章節提到的部分內容都會在下一章節有更詳細的介紹~ 主要會分成兩個部分來介紹  basic try catch  第一個部分主要會介紹到 PHP 錯誤回報層級以及相對應的設定檔..等等而第二個部分則是會介紹如何使用 try catch 去偵錯~">
+<meta name="twitter:description" content="這一章節主要要介紹的是 PHP 的錯誤(???是錯誤控管與回報才對!這個章節可以和下一章 Exceptions 合併來觀看在這一章節提到的部分內容都會在下一章節有更詳細的介紹~ 主要會分成兩個部分來介紹  basic try catch set_error_handler  第一個部分主要會介紹到 PHP 錯誤回報層級以及相對應的設定檔..等等而第二個部分則是會介紹如何使用 try catch 去">
   
     <link rel="alternative" href="/atom.xml" title="JasonLai&#39;s blog" type="application/atom+xml">
   
@@ -174,6 +174,7 @@
 <ol>
 <li>basic</li>
 <li>try catch</li>
+<li>set_error_handler</li>
 </ol>
 <p>第一個部分主要會介紹到 PHP 錯誤回報層級以及相對應的設定檔..等等<br>而第二個部分則是會介紹如何使用 try catch 去偵錯~<br><a id="more"></a></p>
 <h2 id="1-basic"><a href="#1-basic" class="headerlink" title="1. basic"></a>1. basic</h2><p>PHP 有提供以下的錯誤回報種類，依據設定不同的層級，會回報對應的錯誤訊息</p>
@@ -271,7 +272,14 @@
 <h2 id="throw"><a href="#throw" class="headerlink" title="throw"></a>throw</h2><p>除了執行錯誤發生的異常之外<br>也可以在 try 區塊中使用 throw 關鍵字，自行拋出異常，讓程式碼進行 catch 的後續處理~</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">try&#123;</span><br><span class="line">	throw new Exception();</span><br><span class="line">&#125;catch(Exception $e)&#123;</span><br><span class="line">	echo &quot;catch error.&quot;;</span><br><span class="line">&#125;finally &#123;</span><br><span class="line">	echo &quot;end...&lt;br&gt;&quot;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 執行完會印出 &quot;catch error.End...&quot;</span><br></pre></td></tr></table></figure>
 <p>範例所使用的都是 Exception 類別<br>會抓住所有得異常類型進行處理<br>實際上可以針對特定的異常類行進行抓取，也可以使用多個 catch 同時對多種異常類行進行處理~<br>對應 debug 或是容易發生異常的程式碼區塊，是相當方便的~</p>
-
+<h2 id="3-set-error-handler"><a href="#3-set-error-handler" class="headerlink" title="3. set_error_handler"></a>3. set_error_handler</h2><p>這部分要介紹自定義錯誤訊息的處理<br>主要是針對使用者在操作時，程式碼所發出的錯誤，比如未判斷傳入參數型態，導致後續函式有問題…等等</p>
+<p>set_error_handler 可傳入兩個參數，分別是</p>
+<ol>
+<li>errorhandler: 處理錯誤的函式名稱</li>
+<li>error_types: 錯誤回報層級，預設值為 E_ALL (可參考本章第一小節)</li>
+</ol>
+<p>在使用上可以搭配 trigger_error 函式進行測試<br>而有一點特別需要注意的是!!!<br>在使用 set_error_handler 函式的情況下，會跳過 PHP 預設的標準錯誤處理程序<br>這也是很重要的一點~<br>當有發生錯誤的時候， PHP 會將發生的錯誤路徑以及執行順序顯示在畫面上<br>這對 debug 來說相當方便，但<strong>萬一</strong>被有心人藉用這種方法去了解專案的實際路徑的話，是相當危險的一件事<br>當然在實際上線佈署的時候也可以採用將 display_errors 設定為 off 的方式去避免這個問題<br>不過現在你之到有另一種選擇啦~ 就是使用 set_error_handler ~</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">function customErrorHandler() &#123;</span><br><span class="line">	echo &quot;some error happened.&quot;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">set_error_handler(&apos;customErrorHandler&apos;);</span><br><span class="line"></span><br><span class="line">trigger_error(&quot;Cannot divide by zero&quot;);</span><br><span class="line"></span><br><span class="line">// 結果會印出 &quot;some error happened.&quot;</span><br></pre></td></tr></table></figure>
       
 
       
