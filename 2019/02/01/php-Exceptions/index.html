@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="JasonLai&#39;s blog">
 <meta property="og:description" content="這一章節要介紹的是 Exception會接續前一章節繼續作更詳細的補充!而這一章節主要要介紹的是：  try catch (會作更詳細的介紹) set_exception_handler (自定義錯誤處理方式) 自定義 Exception 類別  讓我們往下看吧~~">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-02-01T14:19:29.496Z">
+<meta property="og:updated_time" content="2019-02-03T14:21:33.539Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="php-Exceptions">
 <meta name="twitter:description" content="這一章節要介紹的是 Exception會接續前一章節繼續作更詳細的補充!而這一章節主要要介紹的是：  try catch (會作更詳細的介紹) set_exception_handler (自定義錯誤處理方式) 自定義 Exception 類別  讓我們往下看吧~~">
@@ -185,6 +185,10 @@
 <p>但是!!!<br>set_exception_handler 僅僅只是捕捉異常並按照自定義的去處理而已<br>它無法阻止程式碼的中斷<br>請參考下面的範例來加深理解吧~</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">function exception_handler($exception) &#123;</span><br><span class="line">  echo &quot;Uncaught exception: &quot; , $exception-&gt;getMessage(), &quot;\n&quot;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">set_exception_handler(&apos;exception_handler&apos;);</span><br><span class="line"></span><br><span class="line">throw new Exception(&apos;Uncaught Exception&apos;);</span><br><span class="line">echo &quot;Not Executed\n&quot;;</span><br><span class="line"></span><br><span class="line">// 結果會印出 &quot;Uncaught exception: Uncaught Exception&quot;</span><br></pre></td></tr></table></figure>
 <p>你會發現在異常發生的下一行字串並沒有被印出來<br>在正常不使用 set_exception_handler 的情況下<br>若有異常發生的時候，會造成錯誤代碼 500 的無法顯示網頁<br>而使用 set_exception_handler 僅只是避免發生錯誤代碼 500 的異常網頁而已<br><strong>並不能夠阻止網頁的中斷</strong><br>因此在這種情況或是需要 debug 的時候，仍然會建議使用 try catch 會比較恰當喔~</p>
+<h2 id="set-exception-handler-vs-set-error-handler"><a href="#set-exception-handler-vs-set-error-handler" class="headerlink" title="set_exception_handler vs set_error_handler"></a>set_exception_handler vs set_error_handler</h2><p>這邊要額外整理一下…<br>關於前一章節提過的 set_error_handler 和這章提到的 set_exception_handler 有什麼差異~</p>
+<p><strong> 1. 處理問題的類型 </strong><br>前一章節提到的 set_error_handler 主要是針對使用者在操作時候產生的非中斷錯誤<br>而本章提到的 set_exception_handler 是針對沒有被 catch 到的異常 (會使程式碼中斷)<br>在文字敘述上<br>我們以錯誤 (非中斷) 和 異常 (會中斷) 來區分兩者的差異</p>
+<p><strong> 2. 測試使用的對應函式 </strong><br>當我們想要測試 set_error_handler 是否正常被呼叫時，我們可以使用 trigger_error 來幫助我們進行測試<br>而若要測試 set_exception_handler 的時候，則可以使用 throw new Exception .. 來幫助我們測試呼叫的結果</p>
+<p><strong> 3. PHP 版本之間的小調整 </strong><br>針對 PHP 5 和 PHP 7 之間有一些小調整<br>不過大致上來說， set_error_handler 和 set_exception_handler 的功用都和上述說明的是相同的<br>唯一的調整在於 Fatal Error (會使得程式碼終止的致命性錯誤) 的部分<br>在 PHP 5 的版本中，只要發生 Fatal Error，就會將錯誤訊息顯示在畫面上，不會被任一 handler 管理<br>而到了 PHP 7 之後，Fatal Error 也可以被 set_exception_handler 給捕捉，所以可以使用 set_exception_handler 去避免將 Fatal Error 錯誤訊息顯示在畫面上的弊端</p>
 <h2 id="3-自定義-Exception-類別"><a href="#3-自定義-Exception-類別" class="headerlink" title="3. 自定義 Exception 類別"></a>3. 自定義 Exception 類別</h2><p>在一般使用 try catch 去抓取異常類型的時候<br>我們通常會使用 Exception 這個類別，因為它可以抓取所有可能產生的異常類型<br>換句話說，Exception 就是異常類型的基底類別，是 PHP 本來就預設存在的類別<br>也因此當我們想要自定義一個異常類別的時候，<strong>需要先繼承 Exception 這個類別</strong></p>
 <p>詳細的 Exception 類別在官方的文件中有正式的介紹<br>因此這邊就不再列出完整的 Exception 類別了~<br>底下會比較偏向如何繼承 Exception 去實做一個客製化的異常類別為主!</p>
 <p>首先在官方的文件中有提到<br>在自定義 Exception 類別的時候，若有改寫建構元的時候，建議呼叫父類別的建構元，也就是 parent::__construct()<br>用來確保在 Exception 類別中的所有成員變數都有被賦值了<br>另外要注意!!!<br>在改寫建構元的時候，必需要傳入 Exception 類別建構元的所有參數<br>按照順序分別是</p>
