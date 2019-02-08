@@ -146,6 +146,87 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-php-Sessions" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/02/08/php-Sessions/">php-Sessions</a>
+    </h1>
+  
+
+        
+        <a href="/2019/02/08/php-Sessions/" class="archive-article-date">
+  	<time datetime="2019-02-08T10:02:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-08</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>這一章節要介紹 PHP 的 Session<br>Session 也可以用來存放資訊，它和 Cookie 最大的不同就在於存放的位置<br>Session 是存放在伺服器中；而 Cookie 是存放在使用者的電腦中<br>也因此會將比較隱密的資料存放在 Session 中，比如說使用者登入的資料…等等<br>因此，Session 也可以用來辨識使用者，當操作需要知道當前是哪位使用者的時候，就可以從 Session 裡面抓取出使用者的資料~</p>
+<p><strong>而當瀏覽器關閉的時候，Session 也會消失，這點和 Cookie 是不同的，Cookie 需要使用者自行清除~</strong></p>
+<p>或許你會納悶 (可能也沒有~<br>為何要區分 Session 或 Cookie 呢? 難道不能只用一種就好嗎?<br>原因在於我們會需要將隱密的資料存放在 Session，比如說用戶登入的時候<br>但是如果將過多的資料存放在 Session，也就是我們的伺服器的時候，就會加大我們自身的負擔<br>也因此，我們將比較不隱密的資料放到 Cookie 中，讓使用者的電腦自行吸收<br>讓我們可以在較少負擔的情況下達到我們的需求</p>
+<p>這一章節也會分成 4 個小節來介紹，分別是</p>
+<ol>
+<li>Create</li>
+<li>Retrieve</li>
+<li>Update</li>
+<li>Delete</li>
+</ol>
+        
+          <a class="article-more-a" href="/2019/02/08/php-Sessions/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">php</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-php-Cookies" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -823,83 +904,6 @@
 </ol>
         
           <a class="article-more-a" href="/2018/09/19/php-Expressions/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">php</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-php-Constants" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/09/17/php-Constants/">php-Constants</a>
-    </h1>
-  
-
-        
-        <a href="/2018/09/17/php-Constants/" class="archive-article-date">
-  	<time datetime="2018-09-17T13:43:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-17</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>這章主要介紹 PHP 的常數。<br>常數的意思就是<strong>數值不會被改變</strong>的常量；和常數相反的就是變數，就是指可以被改變的變量。<br><em>常數名稱的命名規則和變數相同，一樣不可以使用數字和特別符號當做名稱的開頭</em></p>
-<p>而更詳細的內容會分成2個部分來介紹：</p>
-<ol>
-<li>syntax</li>
-<li>magic contants</li>
-</ol>
-        
-          <a class="article-more-a" href="/2018/09/17/php-Constants/#more">more >></a>
         
       
 

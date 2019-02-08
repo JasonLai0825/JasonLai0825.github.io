@@ -6,15 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Tag: php | JasonLai&#39;s blog</title>
+  <title>php-Sessions | JasonLai&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="JasonLai&#39;s blog">
-<meta property="og:url" content="http://yoursite.com/tags/php/index.html">
+  <meta name="description" content="這一章節要介紹 PHP 的 SessionSession 也可以用來存放資訊，它和 Cookie 最大的不同就在於存放的位置Session 是存放在伺服器中；而 Cookie 是存放在使用者的電腦中也因此會將比較隱密的資料存放在 Session 中，比如說使用者登入的資料…等等因此，Session 也可以用來辨識使用者，當操作需要知道當前是哪位使用者的時候，就可以從 Session 裡面抓取出使用">
+<meta name="keywords" content="php">
+<meta property="og:type" content="article">
+<meta property="og:title" content="php-Sessions">
+<meta property="og:url" content="http://yoursite.com/2019/02/08/php-Sessions/index.html">
 <meta property="og:site_name" content="JasonLai&#39;s blog">
+<meta property="og:description" content="這一章節要介紹 PHP 的 SessionSession 也可以用來存放資訊，它和 Cookie 最大的不同就在於存放的位置Session 是存放在伺服器中；而 Cookie 是存放在使用者的電腦中也因此會將比較隱密的資料存放在 Session 中，比如說使用者登入的資料…等等因此，Session 也可以用來辨識使用者，當操作需要知道當前是哪位使用者的時候，就可以從 Session 裡面抓取出使用">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-02-08T10:02:23.199Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JasonLai&#39;s blog">
+<meta name="twitter:title" content="php-Sessions">
+<meta name="twitter:description" content="這一章節要介紹 PHP 的 SessionSession 也可以用來存放資訊，它和 Cookie 最大的不同就在於存放的位置Session 是存放在伺服器中；而 Cookie 是存放在使用者的電腦中也因此會將比較隱密的資料存放在 Session 中，比如說使用者登入的資料…等等因此，Session 也可以用來辨識使用者，當操作需要知道當前是哪位使用者的時候，就可以從 Session 裡面抓取出使用">
   
     <link rel="alternative" href="/atom.xml" title="JasonLai&#39;s blog" type="application/atom+xml">
   
@@ -144,274 +149,89 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-php-Sessions" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      php-Sessions
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/02/08/php-Sessions/" class="archive-article-date">
+
+        
+        <a href="/2019/02/08/php-Sessions/" class="archive-article-date">
   	<time datetime="2019-02-08T10:02:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-08</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/02/08/php-Sessions/">php-Sessions</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">php</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
+        
+      </header>
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/02/06/php-Cookies/" class="archive-article-date">
-  	<time datetime="2019-02-06T09:01:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-06</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/02/06/php-Cookies/">php-Cookies</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">php</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/02/01/php-Exceptions/" class="archive-article-date">
-  	<time datetime="2019-02-01T14:19:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-01</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/02/01/php-Exceptions/">php-Exceptions</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">php</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/01/26/php-Errors/" class="archive-article-date">
-  	<time datetime="2019-01-26T09:02:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-26</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/01/26/php-Errors/">php-Errors</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">php</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/01/17/php-Classes-and-objects-2/" class="archive-article-date">
-  	<time datetime="2019-01-17T13:06:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-17</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/01/17/php-Classes-and-objects-2/">php-Classes and objects (下)</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">php</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/01/04/php-Classes-and-objects-1/" class="archive-article-date">
-  	<time datetime="2019-01-04T13:19:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-04</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/01/04/php-Classes-and-objects-1/">php-Classes and objects (上)</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">php</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
+    <div class="article-entry" itemprop="articleBody">
       
-        </div></section>
+        <p>這一章節要介紹 PHP 的 Session<br>Session 也可以用來存放資訊，它和 Cookie 最大的不同就在於存放的位置<br>Session 是存放在伺服器中；而 Cookie 是存放在使用者的電腦中<br>也因此會將比較隱密的資料存放在 Session 中，比如說使用者登入的資料…等等<br>因此，Session 也可以用來辨識使用者，當操作需要知道當前是哪位使用者的時候，就可以從 Session 裡面抓取出使用者的資料~</p>
+<p><strong>而當瀏覽器關閉的時候，Session 也會消失，這點和 Cookie 是不同的，Cookie 需要使用者自行清除~</strong></p>
+<p>或許你會納悶 (可能也沒有~<br>為何要區分 Session 或 Cookie 呢? 難道不能只用一種就好嗎?<br>原因在於我們會需要將隱密的資料存放在 Session，比如說用戶登入的時候<br>但是如果將過多的資料存放在 Session，也就是我們的伺服器的時候，就會加大我們自身的負擔<br>也因此，我們將比較不隱密的資料放到 Cookie 中，讓使用者的電腦自行吸收<br>讓我們可以在較少負擔的情況下達到我們的需求</p>
+<p>這一章節也會分成 4 個小節來介紹，分別是</p>
+<ol>
+<li>Create</li>
+<li>Retrieve</li>
+<li>Update</li>
+<li>Delete</li>
+</ol>
+<a id="more"></a>
+<h2 id="1-Create"><a href="#1-Create" class="headerlink" title="1. Create"></a>1. Create</h2><p>在 PHP 當中若要建立 Session 是非常簡單的<br>首先需要在所有的 html 標籤之前呼叫 session_start() 函式就可以了<br>如此一來就可以在當前的頁面中獲得使用 Session 的權利了~</p>
+<p>再來在不同的 PHP 版本下要建立 Session 的話，需要使用不同的方式<br><strong>在 PHP 4 ~ PHP 5.4 </strong><br>需要分別使用以下 3 種 Session 相關的函式，分別是</p>
+<table>
+<thead>
+<tr>
+<th>函式名稱</th>
+<th>參數</th>
+<th>介紹</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>session_register</td>
+<td>string name</td>
+<td>註冊特定名稱 Session</td>
+</tr>
+<tr>
+<td>session_unregister</td>
+<td>string name</td>
+<td>移除特定名稱 Session</td>
+</tr>
+<tr>
+<td>session_is_registerd</td>
+<td>string name</td>
+<td>檢查 Session 是否存在</td>
+</tr>
+</tbody>
+</table>
+<p>因為版本已經過時了，在這裡就只稍微提到就好，不附上程式碼範例啦~</p>
+<p><strong>而其餘 PHP 版本</strong><br>在前面曾經提過 $_SESSION 這個全域變數<br>他是用來儲存所有 Session 的變數</p>
+<p>在其餘的 PHP 版本當中<br>我們只需要使用<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$_SESSION[&apos;name&apos;] = &apos;value&apos;;</span><br></pre></td></tr></table></figure></p>
+<p>就可以建立一個名為 “name” 的 Session 囉~</p>
+<h2 id="2-Retrieve"><a href="#2-Retrieve" class="headerlink" title="2. Retrieve"></a>2. Retrieve</h2><p>而取得 Session 的方法也非常簡單，而且在前一小節已經曝露了!!!<br>因為 $_SESSION 這個全域變數是以陣列的方式在儲存數值<br>因此若是我們想要取得特定的 Session，也只需要使用如下的程式碼範例<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">echo $_SESSION[&apos;name&apos;];</span><br></pre></td></tr></table></figure></p>
+<p>就可以啦成功取得名稱為 “name” 的 Session啦~</p>
+<p><strong>特別要注意的是</strong><br>要記得在所有的 html 標籤前面呼叫 session_start() 函式才可以成功使用 session !!!</p>
+<h2 id="3-Update"><a href="#3-Update" class="headerlink" title="3. Update"></a>3. Update</h2><p>要更新特定 Session 數值的方式也同樣很簡單 XD<br>只需要將新的數值傳給特定的 Session 即可~</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$_SESSION[&apos;name&apos;] = &apos;new value&apos;;</span><br></pre></td></tr></table></figure>
+<p>真的是太方便、太簡單了~~~</p>
+<h2 id="4-Delete"><a href="#4-Delete" class="headerlink" title="4. Delete"></a>4. Delete</h2><p>最後要說到如何刪除 Session<br>有 2 種相關函式可以使用<br>底下會依序介紹</p>
+<p><strong> 1. session_unset() </strong><br>當使用 session_unset 函式時，可以選擇是否傳入特定的 Session 名稱<br>若不傳入的話，則會移除所有存在 Session 裡面的變數<br>若有指定特定 Session 名稱的話，則只會移除指定的 Session</p>
+<p><strong> 2. session_destroy() </strong><br>使用 session_unset 僅僅只是釋放所有存在於 Session 當中的變數而以<br>Session 這個物件仍然存在<br>因此我們會需要使用到第 2 個函式，也就是 session_destroy~<br>它會將 Session 這個物件移除，完全釋放 Session 所占用的空間</p>
+<p>一般情況下會將兩者同時使用，如下面範例所示~</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">session_unset();</span><br><span class="line">session_destroy();</span><br></pre></td></tr></table></figure>
+<p>那麼介紹就到這啦~</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/11/27/php-Functions/" class="archive-article-date">
-  	<time datetime="2018-11-27T15:21:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-27</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/11/27/php-Functions/">php-Functions</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -423,136 +243,105 @@
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/02/08/php-Sessions/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/10/17/php-Control_Structure/" class="archive-article-date">
-  	<time datetime="2018-10-17T14:32:48.974Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-17</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2019/02/06/php-Cookies/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">php-Cookies</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/10/17/php-Control_Structure/">PHP-Control Structure</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">php</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/10/03/php-Operators/" class="archive-article-date">
-  	<time datetime="2018-10-02T16:15:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-03</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/10/03/php-Operators/">php-Operators</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">php</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/09/19/php-Expressions/" class="archive-article-date">
-  	<time datetime="2018-09-19T14:58:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-19</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/09/19/php-Expressions/">php-Expressions</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">php</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/tags/php/page/2/">2</a><a class="extend next" rel="next" href="/tags/php/page/2/">Next &raquo;</a>
-    </nav>
   
 
 
@@ -576,9 +365,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
