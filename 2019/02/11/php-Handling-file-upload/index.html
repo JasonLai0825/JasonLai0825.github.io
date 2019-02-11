@@ -6,15 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>JasonLai&#39;s blog</title>
+  <title>php-Handling file upload | JasonLai&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="JasonLai&#39;s blog">
-<meta property="og:url" content="http://yoursite.com/page/2/index.html">
+  <meta name="description" content="終於到了最後一個章節了~~最後這個章節要介紹的是如何上傳檔案，會搭配 html 的 form 標籤一起介紹~而這個章節主要會分成 4 個小節來介紹，分別是…  Post  上傳多個檔案 相關錯誤訊息 常見錯誤  因為翻譯的關係，所以章節的名稱會中英交錯，請多多包涵啦~ (其實是懶… XD">
+<meta name="keywords" content="php">
+<meta property="og:type" content="article">
+<meta property="og:title" content="php-Handling file upload">
+<meta property="og:url" content="http://yoursite.com/2019/02/11/php-Handling-file-upload/index.html">
 <meta property="og:site_name" content="JasonLai&#39;s blog">
+<meta property="og:description" content="終於到了最後一個章節了~~最後這個章節要介紹的是如何上傳檔案，會搭配 html 的 form 標籤一起介紹~而這個章節主要會分成 4 個小節來介紹，分別是…  Post  上傳多個檔案 相關錯誤訊息 常見錯誤  因為翻譯的關係，所以章節的名稱會中英交錯，請多多包涵啦~ (其實是懶… XD">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-02-11T15:54:41.757Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JasonLai&#39;s blog">
+<meta name="twitter:title" content="php-Handling file upload">
+<meta name="twitter:description" content="終於到了最後一個章節了~~最後這個章節要介紹的是如何上傳檔案，會搭配 html 的 form 標籤一起介紹~而這個章節主要會分成 4 個小節來介紹，分別是…  Post  上傳多個檔案 相關錯誤訊息 常見錯誤  因為翻譯的關係，所以章節的名稱會中英交錯，請多多包涵啦~ (其實是懶… XD">
   
     <link rel="alternative" href="/atom.xml" title="JasonLai&#39;s blog" type="application/atom+xml">
   
@@ -144,358 +149,130 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-php-Expressions" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-php-Handling-file-upload" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/09/19/php-Expressions/">php-Expressions</a>
+    <h1 class="article-title" itemprop="name">
+      php-Handling file upload
     </h1>
   
 
         
-        <a href="/2018/09/19/php-Expressions/" class="archive-article-date">
-  	<time datetime="2018-09-19T14:58:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-19</time>
+        <a href="/2019/02/11/php-Handling-file-upload/" class="archive-article-date">
+  	<time datetime="2019-02-11T15:54:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-11</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>這個章節要介紹 Expressions (表達式)，<br>引用官方手冊對表達式的介紹就是<strong>Anything that has a value</strong><br>就是說任何有值的東西都屬於表達式的一部分<br>聽起來有點抽象，但透過下面的說明相信可以幫助你更加了解一些~<br>這章節主要會分成6個部分來討論：</p>
+        <p>終於到了最後一個章節了~~<br>最後這個章節要介紹的是如何上傳檔案，會搭配 html 的 form 標籤一起介紹~<br>而這個章節主要會分成 4 個小節來介紹，分別是…</p>
 <ol>
-<li>Variable and Constant</li>
-<li>Function</li>
-<li>Expression Orientation</li>
-<li>Comparison</li>
-<li>Combined</li>
-<li>Ternary conditional operator</li>
+<li>Post </li>
+<li>上傳多個檔案</li>
+<li>相關錯誤訊息</li>
+<li>常見錯誤</li>
 </ol>
-        
-          <a class="article-more-a" href="/2018/09/19/php-Expressions/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">php</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-php-Constants" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/09/17/php-Constants/">php-Constants</a>
-    </h1>
-  
-
-        
-        <a href="/2018/09/17/php-Constants/" class="archive-article-date">
-  	<time datetime="2018-09-17T13:43:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-17</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>這章主要介紹 PHP 的常數。<br>常數的意思就是<strong>數值不會被改變</strong>的常量；和常數相反的就是變數，就是指可以被改變的變量。<br><em>常數名稱的命名規則和變數相同，一樣不可以使用數字和特別符號當做名稱的開頭</em></p>
-<p>而更詳細的內容會分成2個部分來介紹：</p>
+<p>因為翻譯的關係，所以章節的名稱會中英交錯，請多多包涵啦~ (其實是懶… XD<br><a id="more"></a></p>
+<h2 id="1-Post"><a href="#1-Post" class="headerlink" title="1. Post"></a>1. Post</h2><p>第一小節主要要介紹如何使用 POST 方法將檔案上傳<br>而它的方式其實和 html 使用 form 標籤把資料傳到指定目的地是相同的，只是這次傳遞的資料是檔案的形式~</p>
+<p>那我們先來提一下 PHP 是如何上傳檔案的吧~</p>
 <ol>
-<li>syntax</li>
-<li>magic contants</li>
+<li>透過 html 表單將檔案傳到指定目的地</li>
+<li>在後端 PHP 程式碼的部分，前端傳過來的檔案資料全部都會記錄在 $_FILES 這個全域變數中</li>
 </ol>
-        
-          <a class="article-more-a" href="/2018/09/17/php-Constants/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">php</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-php-Variables" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/09/17/php-Variables/">php-Variables</a>
-    </h1>
-  
-
-        
-        <a href="/2018/09/17/php-Variables/" class="archive-article-date">
-  	<time datetime="2018-09-16T16:33:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-17</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>針對 PHP 變數的部分，我主要會分成5個主題來討論，分別是：</p>
+<p>後續在 PHP 程式碼的部分再依據個人用途作客製化就完成啦~<br>居然這麼簡單?!</p>
+<p>那底下就來詳細介紹吧~</p>
+<p><strong> 1. html 表單 </strong><br>在 html 表單的部分有以下幾點需要注意的部分：</p>
 <ol>
-<li>basic</li>
-<li>predefined variables</li>
-<li>variable scope</li>
-<li>variable variables</li>
-<li>variables from external sources</li>
+<li>form 標籤需要加上 <strong> enctype=”multiple/form-data” </strong> 這個屬性，才可以成功上傳檔案</li>
+<li>form 標籤的 action 屬性代表了上傳檔案的目的地</li>
+<li>input 標籤中的 name 屬性代表了它的名稱，在後端需要使用對應名稱去抓取對應的 input 欄位資料</li>
+<li>若要提供選擇要上傳檔案的欄位的話，input 的 type 屬性需要設定成 <strong>file</strong></li>
 </ol>
-        
-          <a class="article-more-a" href="/2018/09/17/php-Variables/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">php</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-php-Types" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/09/13/php-Types/">php-Types</a>
-    </h1>
-  
-
-        
-        <a href="/2018/09/13/php-Types/" class="archive-article-date">
-  	<time datetime="2018-09-13T14:24:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-13</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>PHP的型態主要分為5種，分別是：</p>
+<p>就一起搭配底下的範例來看看吧~<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;form enctype=&quot;multiple/form-data&quot; action=&quot;__URL__&quot; method=&quot;POST&quot;&gt;</span><br><span class="line">	&lt;input name=&quot;user_file&quot; type=&quot;file&quot;/&gt;</span><br><span class="line">	&lt;input type=&quot;submit&quot; value=&quot;Send&quot;/&gt;</span><br><span class="line">&lt;/form&gt;</span><br></pre></td></tr></table></figure></p>
+<p>這樣就完成一個簡單的 form 表單了~</p>
+<p><strong> $_FILES </strong><br>在 PHP 當中使用 $_FILES 這個全域變數來儲存所有前端傳來的檔案資料<br>而每個檔案都會分別有以下 5 個詳細資料</p>
 <ol>
-<li>scalar type (標量類型)</li>
-<li>compound type (複合類型)</li>
-<li>special type (特殊類型)</li>
-<li>virtual type (虛擬類型)</li>
-<li>pseudo type (偽類型)</li>
+<li>$_FILES[‘user_file’][‘name’]: 檔案原名稱</li>
+<li>$_FILES[‘user_file’][‘type’]: 上傳檔案類型</li>
+<li>$_FILES[‘user_file’][‘size’]: 上傳檔案大小</li>
+<li>$_FILES[‘user_file’][‘tmp_name’]: 伺服器上的檔案暫存名稱</li>
+<li>$_FILES[‘user_file’][‘error’]: 若在上傳過程中有發生錯誤的話，則會將錯誤代碼記錄在這</li>
 </ol>
-        
-          <a class="article-more-a" href="/2018/09/13/php-Types/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">php</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-php" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/09/10/php/">php</a>
-    </h1>
-  
-
-        
-        <a href="/2018/09/10/php/" class="archive-article-date">
-  	<time datetime="2018-09-10T13:26:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-10</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>用來記錄自己學習PHP的過程，總共分為13個章節，這些章節都是從<a href="http://www.php.net/manual/en/index.php" target="_blank" rel="noopener">PHP.net</a>參考而來。<br>主要因為自己之前對PHP不夠熟悉，再加上工作上的需要，因此花了一些時間來學習PHP。<br>如果有寫得不夠完整或是有錯誤的部分，非常歡迎來信告知~<br>[尚未完成]</p>
-<h2 id="Learning-Topics"><a href="#Learning-Topics" class="headerlink" title="Learning Topics"></a>Learning Topics</h2><ol>
-<li><a href="https://jasonlai0825.github.io/2018/09/13/php-Types/" target="_blank" rel="noopener">Types</a></li>
-<li>Variables</li>
-<li>Constants</li>
-<li>Expressions</li>
-<li>Operators</li>
-<li>Control Structures</li>
-<li>Functions</li>
-<li>Classes and Objects</li>
-<li>Errors</li>
-<li>Exceptions</li>
-<li>Cookies</li>
-<li>Sessions</li>
-<li>Handling file uploads</li>
+<h2 id="2-上傳多個檔案"><a href="#2-上傳多個檔案" class="headerlink" title="2. 上傳多個檔案"></a>2. 上傳多個檔案</h2><p>想要上傳多個檔案有兩種方式</p>
+<h2 id="1-使用不同的-input-name"><a href="#1-使用不同的-input-name" class="headerlink" title="1. 使用不同的 input name"></a>1. 使用不同的 input name</h2><p>前面有說到後端會使用 input 標籤的 name 屬性去抓取對應的檔案資料<br>所以我們可以使用不同的 name 名稱去分別代表不同的 input 檔案<br>這樣可以達到同時上傳多個檔案的目的</p>
+<h2 id="2-使用相同的陣列名稱"><a href="#2-使用相同的陣列名稱" class="headerlink" title="2. 使用相同的陣列名稱"></a>2. 使用相同的陣列名稱</h2><p>另一種方式是使用陣列的方式，一次將所有檔案都存到同個陣列中<br>如此一來就不需要為各個檔案都取不同的名稱囉~</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;form enctype=&quot;multiple/form-data&quot; action=&quot;__URL__&quot; method=&quot;POST&quot;&gt;</span><br><span class="line">	&lt;input name=&quot;user_file[]&quot; type=&quot;file&quot;/&gt;</span><br><span class="line">	&lt;input name=&quot;user_file[]&quot; type=&quot;file&quot;/&gt;</span><br><span class="line">	&lt;input type=&quot;submit&quot; value=&quot;Send&quot;/&gt;</span><br><span class="line">&lt;/form&gt;</span><br></pre></td></tr></table></figure>
+<p>而後端抓取的方式也是像陣列一樣<br>比如我要取得 user_file 的第一個檔案名稱的話就寫 $_FILES[‘user_file’][‘name’][0] 就可以囉~<br>非常方便吧~~</p>
+<p>我個人會比較偏好使用第 2 種方式<br>不過具體還是看個人的喜好啦!</p>
+<h2 id="3-相關錯誤訊息"><a href="#3-相關錯誤訊息" class="headerlink" title="3. 相關錯誤訊息"></a>3. 相關錯誤訊息</h2><p>這一章節會介紹所有上傳檔案相關的錯誤代碼<br>這邊再次小複習一下!<br>上傳檔案的錯誤代碼是在 <strong>$_FILES[‘fileName’][‘error’]</strong> 當中找到喔~</p>
+<table>
+<thead>
+<tr>
+<th>代碼常數名稱</th>
+<th>代碼編號</th>
+<th>介紹</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>UPLOAD_ERR_OK</td>
+<td>0</td>
+<td>成功上傳</td>
+</tr>
+<tr>
+<td>UPLOAD_ERR_INT_SIZE</td>
+<td>1</td>
+<td>上傳檔案大小超出 <strong>upload_max_filesize</strong> 限制</td>
+</tr>
+<tr>
+<td>UPLOAD_ERR_FORM_SIZE</td>
+<td>2</td>
+<td>上傳檔案大小超出 <strong>MAX_FILE_SIZE</strong> 限制</td>
+</tr>
+<tr>
+<td>UPLOAD_ERR_PARTIAL</td>
+<td>3</td>
+<td>檔案上傳不完全</td>
+</tr>
+<tr>
+<td>UPLOAD_ERR_NO_FILE</td>
+<td>4</td>
+<td>沒有檔案被上傳</td>
+</tr>
+<tr>
+<td>UPLOAD_ERR_NO_TMP_DIR</td>
+<td>6</td>
+<td>找不到暫存目錄</td>
+</tr>
+<tr>
+<td>UPLOAD_ERR_CANT_WRITE</td>
+<td>7</td>
+<td>表示檔案寫入硬碟失敗</td>
+</tr>
+<tr>
+<td>UPLOAD_ERR_EXTENSION</td>
+<td>8</td>
+<td>表示 PHP 的擴展程序導致檔案上傳失敗</td>
+</tr>
+</tbody>
+</table>
+<p>這裡要提一下!!!<br>upload_max_filesize 和 MAX_FILE_SIZE 的差別</p>
+<p><strong> upload_max_filesize </strong><br>它代表了最大可上傳的檔案大小<br>定義在 php.ini 設定檔中</p>
+<p>可以透過修改 php.ini 去調整檔案上傳的大小限制</p>
+<p><strong> MAX_FILE_SIZE </strong><br>這是定義在前端的 html 中<br>它只代表一個前端的<strong>軟性</strong>限制<br>通常會像如下的形式<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;input type=&quot;hidden&quot; name=&quot;MAX_FILE_SIZE&quot; value=&quot;30000&quot;/&gt;</span><br></pre></td></tr></table></figure></p>
+<p>它的用途在於…<br>當上傳的檔案超過這個的限制時，設定一個警示去通知檔案超出限制<br>避免到後端才發現檔案不符合</p>
+<p><strong>軟性</strong>的意思是指說<br>它並不是強制的! 只是一種推薦的寫法而以~<br>最主要的用途就是<strong>在前端先判斷好，避免把問題留到後端</strong></p>
+<p>一般會把 MAX_FILE_SIZE 的數值設定成和 upload_max_filesize 相同<br>如此一來檢查的數值才會相同!!!</p>
+<h2 id="4-常見錯誤"><a href="#4-常見錯誤" class="headerlink" title="4. 常見錯誤"></a>4. 常見錯誤</h2><p>以下有幾點上傳檔案常見的錯誤：</p>
+<ol>
+<li>MAX_FILE_SIZE 的數值超出 upload_max_filesize 的數值，就失去了前端提前判斷的功用</li>
+<li>建議將 memory_limit 的數值設定大一點，避免有足夠的記憶體空間去執行相關的程式碼</li>
+<li>max_execution_times 的數值不該設定過低時，否則容易造成執行程式超時中斷</li>
+<li>max_input_time 是設定 POST、PUT.. 等接收資料相關方式的時間限制，若設定時間過低，當網速過低的時候就容易發生問題</li>
 </ol>
 
       
@@ -521,10 +298,73 @@
       
 
       
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/02/11/php-Handling-file-upload/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+  
+    <a href="/2019/02/08/php-Sessions/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">php-Sessions</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -544,12 +384,14 @@
 
 
 
+  
+  
+  
 
   
+
   
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
-    </nav>
+
   
 
 
@@ -572,8 +414,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
